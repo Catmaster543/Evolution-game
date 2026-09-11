@@ -1,14 +1,15 @@
 using UnityEngine;
 
-public class Waypoint : MonoBehaviour
+public class Waypoint
 {
-    void Start()
-    {
-        
-    }
+    public Vector2 Position {  get; private set; }
 
-    void Update()
+    public Waypoint (Vector2 position)
     {
-        
+        Position = position;
+    }
+    public override string ToString()
+    {
+        return $"Waypoint(pos={Position})";
     }
 }
