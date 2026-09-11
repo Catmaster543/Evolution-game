@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0006bf316bf73f6409d117dd6563a4f4
+guid: df4b13fea2c5dfd41b890efdcc4948cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1302723820812287101
-    second: Untitled_Artwork_0
+      213: 3135533987826498536
+    second: CrumpledNewspaperlvl2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled_Artwork_0
+      name: CrumpledNewspaperlvl2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3240
-        height: 2460
+        x: 353
+        y: 842
+        width: 151
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7cb4f3b964341210800000000000000
-      internalID: 1302723820812287101
+      spriteID: 8ebff859c87a38b20800000000000000
+      internalID: 3135533987826498536
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled_Artwork_0: 1302723820812287101
+      CrumpledNewspaperlvl2_0: 3135533987826498536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
