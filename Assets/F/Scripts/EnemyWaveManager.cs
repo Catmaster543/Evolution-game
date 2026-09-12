@@ -8,8 +8,8 @@ using UnityEngine;
 public class Wave
 {
     public string name;
-    public int enemyCount;
     public int spawnInterval;
+    public int spacingToNextWave;
     public bool randomizeSpawnTime;
     public float randomRange;
     public SpawnAbleEnemy[] enemies;
@@ -33,10 +33,7 @@ public class EnemyWaveManager : MonoBehaviour
     private float timeLeft;
     void Start()
     {
-        foreach (Wave wave in waves)
-        {
-            StartCoroutine(waitTillSpawn(wave));
-        }
+        StartCoroutine(waitForNextWave());
     }
     void Update()
     {
@@ -63,6 +60,16 @@ public class EnemyWaveManager : MonoBehaviour
                 Instantiate(spawnable);
             }
             j++;
+        }
+    }
+
+    private IEnumerator waitForNextWave()
+    {
+        foreach (Wave wavey in waves)
+        {
+            yield return waitTillSpawn(wavey);
+
+            yield return new WaitForSeconds(wavey.spacingToNextWave);
         }
     }
 }
