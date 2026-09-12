@@ -41,6 +41,9 @@ public class ShopLayout
     public GameObject bgObj;
     public GameObject treesButton;
     public GameObject upgradesButton;
+    public GameObject pot1;
+    public GameObject pot2;
+    public GameObject pot3;
 }
 
 [System.Serializable]
@@ -49,6 +52,9 @@ public class ShopLayoutUpdate : ShopLayout
     public Sprite newBg;
     public Sprite newTrees;
     public Sprite newUpgrade;
+    public Sprite newPot1;
+    public Sprite newPot2;
+    public Sprite newPot3;
 }
 
 public class EnemyWaveManager : MonoBehaviour
@@ -56,6 +62,7 @@ public class EnemyWaveManager : MonoBehaviour
     [SerializeField] private GameObject spawnPoint;
     [SerializeField] public Wave[] waves;
     [SerializeField] public MapLayout mapLayout;
+    [SerializeField] private bool updateSpline;
     [SerializeField] private bool updateShop;
     [SerializeField] public ShopLayout shopLayout;
     [SerializeField] public ShopLayoutUpdate shopUpdate;
@@ -80,9 +87,12 @@ public class EnemyWaveManager : MonoBehaviour
             mapLayout.background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
             mapLayout.background.sprite = mapLayout.newBackground;
 
-            mapLayout.spline = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>();
-            mapLayout.spline.gameObject.SetActive(false);
-            mapLayout.newSpline.tag = "Spline";
+            if (updateSpline)
+            {
+                mapLayout.spline = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>();
+                mapLayout.spline.gameObject.SetActive(false);
+                mapLayout.newSpline.tag = "Spline";
+            }
 
             prevWaveManager = GameObject.FindGameObjectWithTag("Wave manager");
 
