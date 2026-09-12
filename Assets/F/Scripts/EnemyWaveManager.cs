@@ -2,9 +2,11 @@ using Microsoft.Unity.VisualStudio.Editor;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Splines;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 [System.Serializable]
 
@@ -47,7 +49,7 @@ public class ShopLayout
 }
 
 [System.Serializable]
-public class ShopLayoutUpdate : ShopLayout
+public class ShopLayoutUpdate
 {
     public Sprite newBg;
     public Sprite newTrees;
@@ -66,6 +68,10 @@ public class EnemyWaveManager : MonoBehaviour
     [SerializeField] private bool updateShop;
     [SerializeField] public ShopLayout shopLayout;
     [SerializeField] public ShopLayoutUpdate shopUpdate;
+    [SerializeField] private bool updateCurrency;
+    [SerializeField] private GameObject currencyBox;
+    [SerializeField] private TextMeshProUGUI currencyText;
+    [SerializeField] private Sprite newCurrencyBox;
     [SerializeField] private bool isFirstManager;
     [SerializeField] private bool isLastManager;
 
@@ -101,22 +107,19 @@ public class EnemyWaveManager : MonoBehaviour
 
         if (updateShop)
         {
-            if (shopUpdate.bgObj != null)
-            {
-                //do smth
-            }
-            if (shopUpdate.treesButton != null)
-            {
-
-            }
-            if (shopUpdate.upgradesButton != null)
-            {
-
-            }
-
             shopLayout.bgObj.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newBg;
-            shopLayout.treesButton.GetComponent<Button>().image.sprite = shopUpdate.newTrees;
-            shopLayout.upgradesButton.GetComponent<Button>().image.sprite = shopUpdate.newTrees;
+            shopLayout.treesButton.GetComponent<UnityEngine.UI.Button>().image.sprite = shopUpdate.newTrees;
+            shopLayout.upgradesButton.GetComponent<UnityEngine.UI.Button>().image.sprite = shopUpdate.newUpgrade;
+
+            shopLayout.pot1.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot1;
+            shopLayout.pot2.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot2;
+            shopLayout.pot3.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot3;
+        }
+
+        if (updateCurrency)
+        {
+            currencyBox.GetComponent<UnityEngine.UI.Image>().sprite = newCurrencyBox;
+            currencyText.color = new Color(113, 65, 71);
         }
 
         StartCoroutine(waitForNextWave());

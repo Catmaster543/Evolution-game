@@ -193,18 +193,16 @@ MonoBehaviour:
     pot2: {fileID: 0}
     pot3: {fileID: 0}
   shopUpdate:
-    bgObj: {fileID: 0}
-    treesButton: {fileID: 0}
-    upgradesButton: {fileID: 0}
-    pot1: {fileID: 0}
-    pot2: {fileID: 0}
-    pot3: {fileID: 0}
     newBg: {fileID: 0}
     newTrees: {fileID: 0}
     newUpgrade: {fileID: 0}
     newPot1: {fileID: 0}
     newPot2: {fileID: 0}
     newPot3: {fileID: 0}
+  updateCurrency: 0
+  currencyBox: {fileID: 0}
+  currencyText: {fileID: 1682595680}
+  newCurrencyBox: {fileID: 0}
   isFirstManager: 1
   isLastManager: 0
   waveNumber: 0
@@ -479,22 +477,20 @@ MonoBehaviour:
     bgObj: {fileID: 1344648565}
     treesButton: {fileID: 1413186757}
     upgradesButton: {fileID: 781901898}
-    pot1: {fileID: 0}
-    pot2: {fileID: 0}
-    pot3: {fileID: 0}
+    pot1: {fileID: 374630817}
+    pot2: {fileID: 1095308366}
+    pot3: {fileID: 1972883467}
   shopUpdate:
-    bgObj: {fileID: 0}
-    treesButton: {fileID: 0}
-    upgradesButton: {fileID: 0}
-    pot1: {fileID: 0}
-    pot2: {fileID: 0}
-    pot3: {fileID: 0}
     newBg: {fileID: 5617265608227386079, guid: dc2f4648b97aa314bb9574d16c2b0f77, type: 3}
     newTrees: {fileID: -3712801876369831820, guid: db7e3efec34364148aa3c1679f626c80, type: 3}
     newUpgrade: {fileID: -1556908762620874776, guid: 1a6481be7f086554f8b7143cc90bdbba, type: 3}
-    newPot1: {fileID: 0}
-    newPot2: {fileID: 0}
-    newPot3: {fileID: 0}
+    newPot1: {fileID: 1768059660945561757, guid: c9e4a1abcf9e8fc49ae5e9d3a82fc778, type: 3}
+    newPot2: {fileID: 7514061829055241595, guid: 4a5cd1b3e10002e4fb76d7ea1c01002e, type: 3}
+    newPot3: {fileID: 8174702314796205128, guid: acc5aeb3aeb27b24fa04102bf0511041, type: 3}
+  updateCurrency: 0
+  currencyBox: {fileID: 0}
+  currencyText: {fileID: 0}
+  newCurrencyBox: {fileID: 0}
   isFirstManager: 0
   isLastManager: 0
   waveNumber: 0
@@ -917,7 +913,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1768059660945561757, guid: c9e4a1abcf9e8fc49ae5e9d3a82fc778, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1170,26 +1166,24 @@ MonoBehaviour:
     bgObj: {fileID: 1344648565}
     treesButton: {fileID: 1413186757}
     upgradesButton: {fileID: 781901898}
-    pot1: {fileID: 0}
-    pot2: {fileID: 0}
-    pot3: {fileID: 0}
+    pot1: {fileID: 374630817}
+    pot2: {fileID: 1095308366}
+    pot3: {fileID: 1972883467}
   shopUpdate:
-    bgObj: {fileID: 0}
-    treesButton: {fileID: 0}
-    upgradesButton: {fileID: 0}
-    pot1: {fileID: 0}
-    pot2: {fileID: 0}
-    pot3: {fileID: 0}
     newBg: {fileID: 2925990329313537004, guid: 54b8b96574aabd84ba9a7c69a094a7c2, type: 3}
     newTrees: {fileID: 8906031987148823092, guid: 937d207566440024eb5f2204528df4c1, type: 3}
     newUpgrade: {fileID: -1761244972785758101, guid: 5c34125aaae69b444b8877a2d56830dd, type: 3}
-    newPot1: {fileID: 0}
-    newPot2: {fileID: 0}
-    newPot3: {fileID: 0}
+    newPot1: {fileID: 8079415027678571820, guid: e86d8402bb8641e47a11193337dfc76b, type: 3}
+    newPot2: {fileID: -5441880597631512270, guid: 2540925c3c0f7ff4cb5fa580b3320aaf, type: 3}
+    newPot3: {fileID: -1475453382684245871, guid: 7436f5dc5fd110a42b8a39f10c23a5cf, type: 3}
+  updateCurrency: 1
+  currencyBox: {fileID: 954587123}
+  currencyText: {fileID: 1682595680}
+  newCurrencyBox: {fileID: 8864453388065301291, guid: 4d4408f97ecbc0247b250fbc16384789, type: 3}
   isFirstManager: 0
-  isLastManager: 1
+  isLastManager: 0
   waveNumber: 0
-  nextWaveManager: {fileID: 0}
+  nextWaveManager: {fileID: 1543177332}
   enemies: []
 --- !u!4 &500153634
 Transform:
@@ -1996,7 +1990,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5593756408155457983, guid: a0e4d91c603fae54883b15ae61f63fa6, type: 3}
+  m_Sprite: {fileID: 4626846242878430759, guid: 614c0eb867bb6724e848beae13048e43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2095,14 +2089,14 @@ RectTransform:
   m_GameObject: {fileID: 781901898}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4785773, y: 2.2318146, z: 2.2318146}
+  m_LocalScale: {x: 1.3550503, y: 2.0453591, z: 2.045359}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1416290560}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 811.8, y: 315.2}
+  m_AnchoredPosition: {x: 837.9, y: 289.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &781901900
@@ -2169,7 +2163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1556908762620874776, guid: 1a6481be7f086554f8b7143cc90bdbba, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2261,6 +2255,105 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &949753108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 949753110}
+  - component: {fileID: 949753109}
+  m_Layer: 0
+  m_Name: Spawn Manager Wave 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &949753109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949753108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bedd5af81bd22a429640fd0ec14a98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 1997791429}
+  waves:
+  - name: 1
+    spawnInterval: 1
+    spacingToNextWave: 0
+    randomizeSpawnTime: 1
+    randomRange: 2
+    enemies:
+    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
+      count: 5
+    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
+      count: 5
+  - name: 2
+    spawnInterval: 1
+    spacingToNextWave: 0
+    randomizeSpawnTime: 0
+    randomRange: 1
+    enemies:
+    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
+      count: 10
+    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
+      count: 3
+    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
+      count: 3
+  mapLayout:
+    towerPlaceables: []
+    background: {fileID: 0}
+    newBackground: {fileID: -7426412252317703503, guid: 3def73e35811cb1489c83826863cdca0, type: 3}
+    spline: {fileID: 0}
+    newSpline: {fileID: 542532750}
+  updateSpline: 0
+  updateShop: 1
+  shopLayout:
+    bgObj: {fileID: 1344648565}
+    treesButton: {fileID: 1413186757}
+    upgradesButton: {fileID: 781901898}
+    pot1: {fileID: 374630817}
+    pot2: {fileID: 1095308366}
+    pot3: {fileID: 1972883467}
+  shopUpdate:
+    newBg: {fileID: -8902512215256499377, guid: 2a2f30592329ad545b6b5b9cbfa803fd, type: 3}
+    newTrees: {fileID: -77660744149763487, guid: ee742c735ff75fc46a9cbab1d173dd50, type: 3}
+    newUpgrade: {fileID: 6709675549300297612, guid: 3c3486f1f1c13b44f992e0a6dacf5d25, type: 3}
+    newPot1: {fileID: -7390478437542185618, guid: d718882fd10db1942806d8875d0758b8, type: 3}
+    newPot2: {fileID: 7589122947877512463, guid: 683bda81c9abba04bbd8ad72bce4f031, type: 3}
+    newPot3: {fileID: -7858869589308476736, guid: 63ba7f95e1adc6744a0cf201c61b5ec3, type: 3}
+  updateCurrency: 0
+  currencyBox: {fileID: 0}
+  currencyText: {fileID: 0}
+  newCurrencyBox: {fileID: 0}
+  isFirstManager: 0
+  isLastManager: 1
+  waveNumber: 0
+  nextWaveManager: {fileID: 0}
+  enemies: []
+--- !u!4 &949753110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949753108}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.54478, y: -1.36919, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2881,7 +2974,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7514061829055241595, guid: 4a5cd1b3e10002e4fb76d7ea1c01002e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3256,7 +3349,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5617265608227386079, guid: dc2f4648b97aa314bb9574d16c2b0f77, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3697,14 +3790,14 @@ RectTransform:
   m_GameObject: {fileID: 1413186757}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4785773, y: 2.2318146, z: 2.2318146}
+  m_LocalScale: {x: 1.3174402, y: 1.9885888, z: 1.9885888}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1416290560}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 567, y: 317.9}
+  m_AnchoredPosition: {x: 622.8, y: 288.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413186759
@@ -3771,7 +3864,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3712801876369831820, guid: db7e3efec34364148aa3c1679f626c80, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4046,6 +4139,105 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.43, y: -13.28, z: 0}
   m_LocalScale: {x: 4.0217, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1543177332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1543177334}
+  - component: {fileID: 1543177333}
+  m_Layer: 0
+  m_Name: Spawn Manager Wave 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1543177333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543177332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bedd5af81bd22a429640fd0ec14a98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 1997791429}
+  waves:
+  - name: 1
+    spawnInterval: 1
+    spacingToNextWave: 0
+    randomizeSpawnTime: 1
+    randomRange: 2
+    enemies:
+    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
+      count: 5
+    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
+      count: 5
+  - name: 2
+    spawnInterval: 1
+    spacingToNextWave: 0
+    randomizeSpawnTime: 0
+    randomRange: 1
+    enemies:
+    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
+      count: 10
+    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
+      count: 3
+    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
+      count: 3
+  mapLayout:
+    towerPlaceables: []
+    background: {fileID: 0}
+    newBackground: {fileID: -1081596111222206343, guid: e40492712543c1847bc1fd1d2fa9a99d, type: 3}
+    spline: {fileID: 0}
+    newSpline: {fileID: 542532750}
+  updateSpline: 0
+  updateShop: 1
+  shopLayout:
+    bgObj: {fileID: 1344648565}
+    treesButton: {fileID: 1413186757}
+    upgradesButton: {fileID: 781901898}
+    pot1: {fileID: 374630817}
+    pot2: {fileID: 1095308366}
+    pot3: {fileID: 1972883467}
+  shopUpdate:
+    newBg: {fileID: -8902512215256499377, guid: 2a2f30592329ad545b6b5b9cbfa803fd, type: 3}
+    newTrees: {fileID: 4869203581274160981, guid: 645c47ebd99f71e4a999bc81326ddb63, type: 3}
+    newUpgrade: {fileID: 5339697146981541650, guid: a377c340ebf6a4a4aa42ef6cab4db852, type: 3}
+    newPot1: {fileID: 4561105199526407238, guid: 312c567ba3a991d42ae1781925aee960, type: 3}
+    newPot2: {fileID: 4175679474464182999, guid: 2f17c482a8d89b649a995f871d7d43ed, type: 3}
+    newPot3: {fileID: 2709895573629627567, guid: 7f748bbad99371c4fa1be0a41173725e, type: 3}
+  updateCurrency: 0
+  currencyBox: {fileID: 0}
+  currencyText: {fileID: 0}
+  newCurrencyBox: {fileID: 0}
+  isFirstManager: 0
+  isLastManager: 0
+  waveNumber: 0
+  nextWaveManager: {fileID: 0}
+  enemies: []
+--- !u!4 &1543177334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543177332}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.54478, y: -1.36919, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4538,7 +4730,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12.3
+  orthographic size: 12.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4728,7 +4920,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8174702314796205128, guid: acc5aeb3aeb27b24fa04102bf0511041, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4847,6 +5039,8 @@ SceneRoots:
   - {fileID: 155824395}
   - {fileID: 277774691}
   - {fileID: 500153634}
+  - {fileID: 1543177334}
+  - {fileID: 949753110}
   - {fileID: 1418691028}
   - {fileID: 434859471}
   - {fileID: 919158835}
