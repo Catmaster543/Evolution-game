@@ -49,12 +49,12 @@ public class EnemyWaveManager : MonoBehaviour
             for (int i = 0; i < wave.enemies[j].count; i++)
             {
                 timeLeft = wave.spawnInterval;
-                Debug.Log($"Timeleft is {timeLeft}, apllying multiplier, random ceiling is {wave.randomRange}");
+                //Debug.Log($"Timeleft is {timeLeft}, apllying multiplier, random ceiling is {wave.randomRange}");
                 if (wave.randomizeSpawnTime)
                 {
                     timeLeft *= Random.Range(0, wave.randomRange);
                 }
-                Debug.Log($"Waiting for {timeLeft}");
+                //Debug.Log($"Waiting for {timeLeft}");
                 yield return new WaitForSeconds(timeLeft);
                 GameObject spawnable = wave.enemies[j].enemyObject;
                 Instantiate(spawnable);

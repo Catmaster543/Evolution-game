@@ -27,4 +27,24 @@ public class Enemy : MonoBehaviour
 
         spline.Play();
     }
+
+    void Update()
+    {
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Hit!");
+        Debug.Log(collision.name);
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+            hp -= bullet.damage;
+            Destroy(bullet.gameObject);
+        }
+    }
 }
