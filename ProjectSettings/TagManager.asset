@@ -14,6 +14,7 @@ TagManager:
   - Balance
   - Map
   - Shopkeeper
+  - Tower spot
   layers:
   - Default
   - TransparentFX

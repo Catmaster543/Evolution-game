@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class PurchaseableTree
 {
     public GameObject tower;
+    public string ID;
     public int price;
     public Button button;
 }
@@ -21,12 +23,26 @@ public class Shop : MonoBehaviour
     public GameObject palmTree;
     public GameObject sakuraTree;
 
+    public TextMeshProUGUI pineCostText;
+    public TextMeshProUGUI palmCostText;
+    public TextMeshProUGUI sakuraCostText;
+
+    public int pinePrice;
+    public int palmPrice;
+    public int sakuraPrice;
+
+    public int cost;
+
     private Map map;
     private Balance balance;
     void Start()
     {
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
-        //balance = GameObject.FindGameObjectWithTag()
+        balance = GameObject.FindGameObjectWithTag("Balance").GetComponent<Balance>();
+
+        pineCostText.text = pinePrice.ToString();
+        palmCostText.text = palmPrice.ToString();
+        sakuraCostText.text = sakuraPrice.ToString();
     }
 
     void Update()
@@ -41,21 +57,36 @@ public class Shop : MonoBehaviour
 
     public void BuyAPineTree()
     {
-        //if ()
-        purchasedTower = pineTree;
-        Debug.Log("Purchased tree set, moving on to placing it");
-        StartCoroutine(map.PlaceATree());
+        if (balance.balance >= pinePrice)
+        {
+            purchasedTower = pineTree;
+            cost = pinePrice;
+            Debug.Log("Purchased pine tree set, moving on to placing it");
+            StartCoroutine(map.PlaceATree());
+        }
     }
 
-    public void BuyAPalmTree(Tower tower)
+    public void BuyAPalmTree()
     {
-        purchasedTower = palmTree;
-        map.PlaceATree();
+        Debug.Log("Trying to buy a palm");
+        if (balance.balance >= palmPrice)
+        {
+            purchasedTower = palmTree;
+            cost = palmPrice;
+            Debug.Log("Purchased palm tree set, moving on to placing it");
+            StartCoroutine(map.PlaceATree());
+        }
     }
 
-    public void BuyASakuraTree(Tower tower)
+    public void BuyASakuraTree()
     {
-        purchasedTower = sakuraTree;
-        map.PlaceATree();
+        Debug.Log("Trying to buy a sakura");
+        if (balance.balance >= sakuraPrice)
+        {
+            purchasedTower = sakuraTree;
+            cost = sakuraPrice;
+            Debug.Log("Purchased sakura tree set, moving on to placing it");
+            StartCoroutine(map.PlaceATree());
+        }
     }
 }

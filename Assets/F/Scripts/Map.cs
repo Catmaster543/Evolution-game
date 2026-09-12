@@ -1,9 +1,11 @@
+using NUnit.Framework;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    [SerializeField] TowerPlaceable[] spots;
+    [SerializeField] List<TowerPlaceable> spots = new();
 
 
     public bool placed = false;
@@ -12,6 +14,7 @@ public class Map : MonoBehaviour
     void Start()
     {
         shop = GameObject.FindGameObjectWithTag("Shopkeeper").GetComponent<Shop>();
+        CheckPlaceableSpots();
     }
     void Update()
     {
@@ -33,11 +36,19 @@ public class Map : MonoBehaviour
     public void FinishPlacingTree(GameObject tower)
     {
         Debug.Log("Finishing tree placement");
-        //Instantiate(tower, theSpot.transform);
         foreach (TowerPlaceable spot in spots)
         {
             spot.gameObject.SetActive(false);
         }
         placed = false;
+    }
+
+    public void CheckPlaceableSpots()
+    {
+        GameObject[] spawnableSpots = GameObject.FindGameObjectsWithTag("Tower spot");
+        foreach (GameObject spot in spawnableSpots)
+        {
+            spots.Add(spot.GetComponentInChildren<TowerPlaceable>());
+        }
     }
 }

@@ -12,9 +12,6 @@ public class Balance : MonoBehaviour
 
     void Update()
     {
-        if (balance != 0)
-        {
-            balanceText.text = balance.ToString();
-        }
+        balanceText.text = balance.ToString();
     }
 }
