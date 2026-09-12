@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -15,9 +16,19 @@ public class Tower : MonoBehaviour
 
     private float clocker;
     private EnemyWaveManager enemyWaveManager;
+
+    public List<GameObject> enemiesInRange = new();
+
+    private Vector3 posRange;
+    CircleCollider2D rangeCollider;
     void Start()
     {
         enemyWaveManager = GameObject.FindGameObjectWithTag("Wave manager").GetComponent<EnemyWaveManager>();
+        rangeCollider = gameObject.GetComponent<CircleCollider2D>();
+
+        rangeCollider.radius = range;
+
+        posRange = new Vector3(transform.position.x + range, transform.position.y + range);
     }
 
     void Update()
@@ -36,23 +47,15 @@ public class Tower : MonoBehaviour
 
     private void Shoot()
     {
-        if (GameObject.FindGameObjectWithTag("Enemy") != null)
+        if (enemiesInRange != null)
         {
-            GameObject target = GameObject.FindGameObjectWithTag("Enemy");
-
-            GameObject[] enemiesObj = GameObject.FindGameObjectsWithTag("Enemy");
-            List<Enemy> enemies = new();
-            foreach (GameObject enemy in enemiesObj)
+            GameObject target = null;
+            foreach (GameObject enemy in enemiesInRange)
             {
-                enemies.Add(enemy.GetComponent<Enemy>());
-            }
-
-            foreach (Enemy enemy in enemies)
-            {
-                if (enemy.order <= i)
+                if (enemy.GetComponent<Enemy>().order <= i)
                 {
                     target = enemy.gameObject;
-                    i = enemy.order;
+                    i = enemy.GetComponent<Enemy>().order;
                 }
             }
 
@@ -67,7 +70,27 @@ public class Tower : MonoBehaviour
 
             GameObject proj = Instantiate(bullet, gameObject.transform.position, Quaternion.Euler(0, 0, angle));
 
+            Bullet bbullet = proj.GetComponent<Bullet>();
+            bbullet.originTower = this;
+
             proj.GetComponent<Rigidbody2D>().linearVelocity = direction * shootSpeed;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            enemiesInRange.Add(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            enemiesInRange.Remove(collision.gameObject);
+            i = 1000;
         }
     }
 }

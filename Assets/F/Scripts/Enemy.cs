@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour
     private Balance balance;
 
     public int order;
+
+    private Bullet lastBullet;
     
     void Start()
     {
@@ -46,6 +48,7 @@ public class Enemy : MonoBehaviour
         if (hp <= 0)
         {
             waveManager.enemies.Remove(gameObject);
+            lastBullet.originTower.enemiesInRange.Remove(gameObject);
             balance.balance += value;
             Destroy(gameObject);
         }
@@ -56,6 +59,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+            lastBullet = bullet;
             hp -= bullet.damage;
             Destroy(bullet.gameObject);
         }

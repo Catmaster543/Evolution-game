@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private int doomsDay;
 
     private float clocker;
+    public Tower originTower;
     void Update()
     {
         clocker += Time.deltaTime;

@@ -3517,6 +3517,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1625669931
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1737527784550567177, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: m_Name
+      value: Pine tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879177714155004129, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.8329325
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.157359
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
 --- !u!1 &1665220815
 GameObject:
   m_ObjectHideFlags: 0
@@ -4244,75 +4305,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
---- !u!1001 &7968303766394502855
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1737527784550567177, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_Name
-      value: Pine tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999526723000681388, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4990739115814755628, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4990739115814755628, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_Color.g
-      value: 0.53792745
-      objectReference: {fileID: 0}
-    - target: {fileID: 4990739115814755628, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8eb188ff4fade874f9f8ebe6068958ed, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4321,7 +4313,6 @@ SceneRoots:
   - {fileID: 624404369}
   - {fileID: 155824395}
   - {fileID: 277774691}
-  - {fileID: 7968303766394502855}
   - {fileID: 1418691028}
   - {fileID: 434859471}
   - {fileID: 919158835}
@@ -4338,3 +4329,4 @@ SceneRoots:
   - {fileID: 229462820}
   - {fileID: 1024578567}
   - {fileID: 1825134044}
+  - {fileID: 1625669931}
