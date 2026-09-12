@@ -12,11 +12,15 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private int damage;
 
+    [SerializeField] public int value;
+
     private SplineAnimate spline;
 
     private SplineContainer splineContainer;
 
     private EnemyWaveManager waveManager;
+
+    private Balance balance;
 
     public int order;
     
@@ -24,6 +28,7 @@ public class Enemy : MonoBehaviour
     {
         splineContainer = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>();
         waveManager = GameObject.FindGameObjectWithTag("Wave manager").GetComponent<EnemyWaveManager>();
+        balance = GameObject.FindGameObjectWithTag("Balance").GetComponent<Balance>();
 
         spline = gameObject.GetComponent<SplineAnimate>();
 
@@ -41,14 +46,13 @@ public class Enemy : MonoBehaviour
         if (hp <= 0)
         {
             waveManager.enemies.Remove(gameObject);
+            balance.balance += value;
             Destroy(gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit!");
-        Debug.Log(collision.name);
         if (collision.gameObject.tag == "Bullet")
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
@@ -59,7 +63,8 @@ public class Enemy : MonoBehaviour
         {
             Player player = collision.gameObject.GetComponent<Player>();
             player.hp -= damage;
-            hp = 0;
+            waveManager.enemies.Remove(gameObject);
+            Destroy(gameObject);
         }
     }
 }

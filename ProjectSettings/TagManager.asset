@@ -11,6 +11,9 @@ TagManager:
   - Wave manager
   - Background
   - Spline
+  - Balance
+  - Map
+  - Shopkeeper
   layers:
   - Default
   - TransparentFX

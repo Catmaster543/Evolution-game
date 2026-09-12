@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
+[System.Serializable]
 public class Tower : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
+    [SerializeField] public string treeType;
     [SerializeField] private int level;
     [SerializeField] private float shootSpeed;
     [SerializeField] private float shootRate;

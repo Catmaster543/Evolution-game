@@ -111,6 +111,7 @@ MonoBehaviour:
   maxHp: 100
   speed: 0.5
   damage: 100
+  value: 10
   order: 0
 --- !u!114 &3465932374857053416
 MonoBehaviour:
