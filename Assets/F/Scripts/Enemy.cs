@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
     private SplineAnimate spline;
 
     private SplineContainer splineContainer;
+
+    public int order;
+    
     void Start()
     {
         splineContainer = GameObject.FindGameObjectWithTag("Spline1").GetComponent<SplineContainer>();

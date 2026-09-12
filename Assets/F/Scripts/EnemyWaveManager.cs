@@ -25,10 +25,11 @@ public class SpawnAbleEnemy
 public class EnemyWaveManager : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPoint;
-    [SerializeField] private Wave[] waves;
+    [SerializeField] public Wave[] waves;
 
-    private float clocker;
-    private bool clock;
+    public int waveNumber;
+
+    private int enemyNumber;
 
     private float timeLeft;
     void Start()
@@ -57,6 +58,8 @@ public class EnemyWaveManager : MonoBehaviour
                 //Debug.Log($"Waiting for {timeLeft}");
                 yield return new WaitForSeconds(timeLeft);
                 GameObject spawnable = wave.enemies[j].enemyObject;
+                spawnable.GetComponent<Enemy>().order = enemyNumber;
+                enemyNumber++;
                 Instantiate(spawnable);
             }
             j++;
