@@ -34,36 +34,38 @@ public class Tower : MonoBehaviour
 
     private void Shoot()
     {
-        
-        GameObject target = GameObject.FindGameObjectWithTag("Enemy");
-
-        GameObject[] enemiesObj = GameObject.FindGameObjectsWithTag("Enemy");
-        List<Enemy> enemies = new();
-        foreach (GameObject enemy in enemiesObj)
+        if (GameObject.FindGameObjectWithTag("Enemy") != null)
         {
-            enemies.Add(enemy.GetComponent<Enemy>());
-        }
+            GameObject target = GameObject.FindGameObjectWithTag("Enemy");
 
-        foreach (Enemy enemy in enemies)
-        {
-            if (enemy.order <= i)
+            GameObject[] enemiesObj = GameObject.FindGameObjectsWithTag("Enemy");
+            List<Enemy> enemies = new();
+            foreach (GameObject enemy in enemiesObj)
             {
-                target = enemy.gameObject;
-                i = enemy.order;
+                enemies.Add(enemy.GetComponent<Enemy>());
             }
+
+            foreach (Enemy enemy in enemies)
+            {
+                if (enemy.order <= i)
+                {
+                    target = enemy.gameObject;
+                    i = enemy.order;
+                }
+            }
+
+            Vector3 dest = target.transform.position;
+            dest.z = 0;
+
+
+            float angle = Mathf.Atan2(target.transform.position.x, target.transform.position.y) * Mathf.Rad2Deg;
+
+
+            Vector3 direction = (dest - gameObject.transform.position).normalized;
+
+            GameObject proj = Instantiate(bullet, gameObject.transform.position, Quaternion.Euler(0, 0, angle));
+
+            proj.GetComponent<Rigidbody2D>().linearVelocity = direction * shootSpeed;
         }
-
-        Vector3 dest = target.transform.position;
-        dest.z = 0;
-
-
-        float angle = Mathf.Atan2(target.transform.position.x, target.transform.position.y) * Mathf.Rad2Deg;
-
-
-        Vector3 direction = (dest - gameObject.transform.position).normalized;
-
-        GameObject proj = Instantiate(bullet, gameObject.transform.position, Quaternion.Euler(0, 0, angle));
-
-        proj.GetComponent<Rigidbody2D>().linearVelocity = direction * shootSpeed;
     }
 }

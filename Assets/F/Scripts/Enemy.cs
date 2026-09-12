@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
 
     private float realSpeed;
 
+    [SerializeField] private int damage;
+
     private SplineAnimate spline;
 
     private SplineContainer splineContainer;
@@ -48,6 +50,12 @@ public class Enemy : MonoBehaviour
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
             hp -= bullet.damage;
             Destroy(bullet.gameObject);
+        }
+        else if (collision.gameObject.tag == "End")
+        {
+            Player player = collision.gameObject.GetComponent<Player>();
+            player.hp -= damage;
+            Destroy(gameObject);
         }
     }
 }
