@@ -16,11 +16,14 @@ public class Enemy : MonoBehaviour
 
     private SplineContainer splineContainer;
 
+    private EnemyWaveManager waveManager;
+
     public int order;
     
     void Start()
     {
         splineContainer = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>();
+        waveManager = GameObject.FindGameObjectWithTag("Wave manager").GetComponent<EnemyWaveManager>();
 
         spline = gameObject.GetComponent<SplineAnimate>();
 
@@ -37,6 +40,7 @@ public class Enemy : MonoBehaviour
     {
         if (hp <= 0)
         {
+            waveManager.enemies.Remove(gameObject);
             Destroy(gameObject);
         }
     }
@@ -55,7 +59,7 @@ public class Enemy : MonoBehaviour
         {
             Player player = collision.gameObject.GetComponent<Player>();
             player.hp -= damage;
-            Destroy(gameObject);
+            hp = 0;
         }
     }
 }

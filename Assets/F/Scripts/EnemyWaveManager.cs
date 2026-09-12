@@ -1,9 +1,10 @@
-using JetBrains.Annotations;
+using Microsoft.Unity.VisualStudio.Editor;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
+using UnityEngine.UI;
 
 [System.Serializable]
 
@@ -34,11 +35,30 @@ public class MapLayout
     public SplineContainer newSpline;
 }
 
+[System.Serializable]
+public class ShopLayout
+{
+    public GameObject bgObj;
+    public GameObject treesButton;
+    public GameObject upgradesButton;
+}
+
+[System.Serializable]
+public class ShopLayoutUpdate : ShopLayout
+{
+    public Sprite newBg;
+    public Sprite newTrees;
+    public Sprite newUpgrade;
+}
+
 public class EnemyWaveManager : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPoint;
     [SerializeField] public Wave[] waves;
     [SerializeField] public MapLayout mapLayout;
+    [SerializeField] private bool updateShop;
+    [SerializeField] public ShopLayout shopLayout;
+    [SerializeField] public ShopLayoutUpdate shopUpdate;
     [SerializeField] private bool isFirstManager;
     [SerializeField] private bool isLastManager;
 
@@ -49,7 +69,7 @@ public class EnemyWaveManager : MonoBehaviour
 
     private int enemyNumber;
 
-    private List<GameObject> enemies = new();
+    public List<GameObject> enemies = new();
 
     private float timeLeft;
     void Start()
@@ -67,6 +87,26 @@ public class EnemyWaveManager : MonoBehaviour
             prevWaveManager = GameObject.FindGameObjectWithTag("Wave manager");
 
             prevWaveManager.gameObject.SetActive(false);
+        }
+
+        if (updateShop)
+        {
+            if (shopUpdate.bgObj != null)
+            {
+                //do smth
+            }
+            if (shopUpdate.treesButton != null)
+            {
+
+            }
+            if (shopUpdate.upgradesButton != null)
+            {
+
+            }
+
+            shopLayout.bgObj.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newBg;
+            shopLayout.treesButton.GetComponent<Button>().image.sprite = shopUpdate.newTrees;
+            shopLayout.upgradesButton.GetComponent<Button>().image.sprite = shopUpdate.newTrees;
         }
 
         StartCoroutine(waitForNextWave());
