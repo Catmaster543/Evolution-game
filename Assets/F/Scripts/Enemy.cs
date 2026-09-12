@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     
     void Start()
     {
-        splineContainer = GameObject.FindGameObjectWithTag("Spline1").GetComponent<SplineContainer>();
+        splineContainer = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>();
 
         spline = gameObject.GetComponent<SplineAnimate>();
 

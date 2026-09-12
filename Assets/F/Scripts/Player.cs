@@ -7,11 +7,16 @@ public class Player : MonoBehaviour
     public float maxhp;
 
     [SerializeField] private TextMeshProUGUI hpText;
+    bool sayImDead = true;
     void Update()
     {
-        if (hp < 0)
+        if (hp <= 0)
         {
-            Debug.Log("I'm died X(");
+            if (sayImDead)
+            {
+                Debug.Log("I'm died X(");
+                sayImDead = false;
+            }
             // Game over
         }
 

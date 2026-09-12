@@ -1,7 +1,9 @@
+using JetBrains.Annotations;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Splines;
 
 [System.Serializable]
 
@@ -22,18 +24,46 @@ public class SpawnAbleEnemy
     public int count;
 }
 
+[System.Serializable]
+public class MapLayout
+{
+    public TowerPlaceable[] towerPlaceables;
+    public SpriteRenderer background;
+    public Sprite newBackground;
+    public SplineContainer spline;
+    public SplineContainer newSpline;
+}
+
 public class EnemyWaveManager : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPoint;
     [SerializeField] public Wave[] waves;
+    [SerializeField] public MapLayout mapLayout;
+    [SerializeField] private bool isFirstManager;
+    [SerializeField] private bool isLastManager;
 
     public int waveNumber;
+
+    private EnemyWaveManager prevWaveManager;
+    [SerializeField] EnemyWaveManager nextWaveManager;
 
     private int enemyNumber;
 
     private float timeLeft;
     void Start()
     {
+        if (!isFirstManager)
+        {
+            mapLayout.background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
+            mapLayout.background.sprite = mapLayout.newBackground;
+
+            mapLayout.spline = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>();
+            mapLayout.spline.gameObject.SetActive(false);
+            mapLayout.newSpline.tag = "Spline";
+
+            prevWaveManager.gameObject.SetActive(false);
+        }
+
         StartCoroutine(waitForNextWave());
     }
     void Update()
@@ -60,7 +90,7 @@ public class EnemyWaveManager : MonoBehaviour
                 GameObject spawnable = wave.enemies[j].enemyObject;
                 spawnable.GetComponent<Enemy>().order = enemyNumber;
                 enemyNumber++;
-                Instantiate(spawnable);
+                Instantiate(spawnable, spawnPoint.transform);
             }
             j++;
         }
@@ -74,5 +104,8 @@ public class EnemyWaveManager : MonoBehaviour
 
             yield return new WaitForSeconds(wavey.spacingToNextWave);
         }
+        nextWaveManager.gameObject.SetActive(true);
+        nextWaveManager.tag = "Wave manager";
+        gameObject.SetActive(false);
     }
 }
