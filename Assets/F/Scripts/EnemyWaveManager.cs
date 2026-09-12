@@ -44,14 +44,17 @@ public class EnemyWaveManager : MonoBehaviour
 
     public int waveNumber;
 
-    private EnemyWaveManager prevWaveManager;
-    [SerializeField] EnemyWaveManager nextWaveManager;
+    private GameObject prevWaveManager;
+    [SerializeField] GameObject nextWaveManager;
 
     private int enemyNumber;
+
+    private List<GameObject> enemies = new();
 
     private float timeLeft;
     void Start()
     {
+        Debug.Log($"Reporting in action! -{gameObject.name}");
         if (!isFirstManager)
         {
             mapLayout.background = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
@@ -60,6 +63,8 @@ public class EnemyWaveManager : MonoBehaviour
             mapLayout.spline = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>();
             mapLayout.spline.gameObject.SetActive(false);
             mapLayout.newSpline.tag = "Spline";
+
+            prevWaveManager = GameObject.FindGameObjectWithTag("Wave manager");
 
             prevWaveManager.gameObject.SetActive(false);
         }
@@ -87,10 +92,10 @@ public class EnemyWaveManager : MonoBehaviour
                 }
                 //Debug.Log($"Waiting for {timeLeft}");
                 yield return new WaitForSeconds(timeLeft);
-                GameObject spawnable = wave.enemies[j].enemyObject;
-                spawnable.GetComponent<Enemy>().order = enemyNumber;
+                GameObject spawnedAble = Instantiate(wave.enemies[j].enemyObject, spawnPoint.transform);
+                spawnedAble.GetComponent<Enemy>().order = enemyNumber;
+                enemies.Add(spawnedAble);
                 enemyNumber++;
-                Instantiate(spawnable, spawnPoint.transform);
             }
             j++;
         }
@@ -103,9 +108,21 @@ public class EnemyWaveManager : MonoBehaviour
             yield return waitTillSpawn(wavey);
 
             yield return new WaitForSeconds(wavey.spacingToNextWave);
+
+            yield return waitTillEnemiesDead();
         }
-        nextWaveManager.gameObject.SetActive(true);
-        nextWaveManager.tag = "Wave manager";
-        gameObject.SetActive(false);
+        if (!isLastManager)
+        {
+            nextWaveManager.SetActive(true);
+            nextWaveManager.tag = "Wave manager";
+            Debug.Log($"Next wave manager has been set up! By: {gameObject.name}");
+            Debug.Log($"Goodbye world! -{gameObject.name}");
+            Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator waitTillEnemiesDead()
+    {
+        yield return new WaitUntil(() => enemies.Count == 0);
     }
 }

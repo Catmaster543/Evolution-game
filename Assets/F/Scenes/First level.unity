@@ -166,23 +166,13 @@ MonoBehaviour:
   spawnPoint: {fileID: 1997791429}
   waves:
   - name: 1
-    spawnInterval: 2
-    spacingToNextWave: 0
-    randomizeSpawnTime: 1
-    randomRange: 2
-    enemies:
-    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
-      count: 3
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 5
-  - name: 2
     spawnInterval: 1
     spacingToNextWave: 0
     randomizeSpawnTime: 0
     randomRange: 1
     enemies:
     - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
-      count: 10
+      count: 4
     - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
       count: 3
     - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
@@ -195,7 +185,7 @@ MonoBehaviour:
   isFirstManager: 1
   isLastManager: 0
   waveNumber: 0
-  nextWaveManager: {fileID: 277774690}
+  nextWaveManager: {fileID: 277774689}
 --- !u!1 &277774689
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +245,7 @@ MonoBehaviour:
     spline: {fileID: 0}
     newSpline: {fileID: 520483018}
   isFirstManager: 0
-  isLastManager: 0
+  isLastManager: 1
   waveNumber: 0
   nextWaveManager: {fileID: 0}
 --- !u!4 &277774691
