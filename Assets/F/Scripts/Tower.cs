@@ -47,7 +47,7 @@ public class Tower : MonoBehaviour
 
     private void Shoot()
     {
-        if (enemiesInRange != null)
+        if (enemiesInRange.Count != 0)
         {
             GameObject target = null;
             foreach (GameObject enemy in enemiesInRange)
