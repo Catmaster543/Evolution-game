@@ -62,4 +62,12 @@ public class TowerPlaceable : MonoBehaviour
         map.lastPlacedSpot = this;
         map.placed = true;
     }
+
+    public void MoveTower()
+    {
+        if (tower != null)
+        {
+            tower.transform.position = transform.position;
+        }   
+    }
 }
