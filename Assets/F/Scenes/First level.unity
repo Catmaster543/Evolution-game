@@ -1070,8 +1070,11 @@ MonoBehaviour:
   palmCostText: {fileID: 1071301918}
   sakuraCostText: {fileID: 365233234}
   pinePrice: 10
+  pineMultiplier: 1.2
   palmPrice: 15
+  palmMultiplier: 2
   sakuraPrice: 20
+  sakuraMultiplier: 10
   purchasedTreeType: 
   cost: 0
 --- !u!4 &432375963
@@ -2606,7 +2609,7 @@ MonoBehaviour:
   mapLayout:
     towerPlaceables: []
     background: {fileID: 0}
-    newBackground: {fileID: -7426412252317703503, guid: 3def73e35811cb1489c83826863cdca0, type: 3}
+    newBackground: {fileID: -1081596111222206343, guid: e40492712543c1847bc1fd1d2fa9a99d, type: 3}
     spline: {fileID: 0}
     newSpline: {fileID: 542532750}
   updateSpline: 0
@@ -4684,7 +4687,7 @@ MonoBehaviour:
   mapLayout:
     towerPlaceables: []
     background: {fileID: 0}
-    newBackground: {fileID: -1081596111222206343, guid: e40492712543c1847bc1fd1d2fa9a99d, type: 3}
+    newBackground: {fileID: -7426412252317703503, guid: 3def73e35811cb1489c83826863cdca0, type: 3}
     spline: {fileID: 0}
     newSpline: {fileID: 542532750}
   updateSpline: 0
@@ -4713,7 +4716,7 @@ MonoBehaviour:
   isLastManager: 0
   secsTillNextWorld: 5
   waveNumber: 0
-  nextWaveManager: {fileID: 0}
+  nextWaveManager: {fileID: 949753108}
   enemies: []
 --- !u!4 &1543177334
 Transform:
@@ -5362,67 +5365,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7696310375654005130
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4421587228308443210, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_Name
-      value: TowerSpot
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421587228308443210, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342608117747732417, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342608117747732417, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342608117747732417, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342608117747732417, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342608117747732417, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342608117747732417, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342608117747732417, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342608117747732417, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342608117747732417, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342608117747732417, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: de57ba348fdf1d14da9183de4131e639, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5438,7 +5380,6 @@ SceneRoots:
   - {fileID: 434859471}
   - {fileID: 919158835}
   - {fileID: 1368615989}
-  - {fileID: 7696310375654005130}
   - {fileID: 1997791430}
   - {fileID: 520483019}
   - {fileID: 1416290560}
@@ -5452,3 +5393,4 @@ SceneRoots:
   - {fileID: 542532751}
   - {fileID: 897856154}
   - {fileID: 1835461768}
+  - {fileID: 1338335574}
