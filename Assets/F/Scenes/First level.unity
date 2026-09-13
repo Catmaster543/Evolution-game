@@ -3134,10 +3134,10 @@ MonoBehaviour:
     randomizeSpawnTime: 1
     randomRange: 2
     enemies:
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 5
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 5
+    - enemyObject: {fileID: 6627727920037663937, guid: 1241a3deda09b414fb178b11afd0384a, type: 3}
+      count: 10
+    - enemyObject: {fileID: 6974345604362570856, guid: 89d3d251c1e37ba49b453335ef05f1f5, type: 3}
+      count: 20
   - name: 2
     spawnInterval: 1
     spacingToNextWave: 0
@@ -3146,10 +3146,10 @@ MonoBehaviour:
     enemies:
     - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
       count: 10
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 3
-    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
-      count: 3
+    - enemyObject: {fileID: 6974345604362570856, guid: 89d3d251c1e37ba49b453335ef05f1f5, type: 3}
+      count: 10
+    - enemyObject: {fileID: 8002904513659383379, guid: 3a124f9330c20354f940d28ea9a664b4, type: 3}
+      count: 1
   mapLayout:
     towerPlaceables: []
     background: {fileID: 0}
@@ -5594,10 +5594,10 @@ MonoBehaviour:
     randomizeSpawnTime: 1
     randomRange: 2
     enemies:
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 5
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 5
+    - enemyObject: {fileID: 3366723591773873230, guid: ba2033d8cc7002a489aa8cd6c64d31a2, type: 3}
+      count: 10
+    - enemyObject: {fileID: 3366723591773873230, guid: 358c1482bb8f21f408deeb6b91093bdc, type: 3}
+      count: 30
   - name: 2
     spawnInterval: 1
     spacingToNextWave: 0
@@ -5606,10 +5606,10 @@ MonoBehaviour:
     enemies:
     - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
       count: 10
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 3
-    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
-      count: 3
+    - enemyObject: {fileID: 3583849933003393996, guid: 39a09dab072e4594d914b16cc77dee9a, type: 3}
+      count: 10
+    - enemyObject: {fileID: 3366723591773873230, guid: ba2033d8cc7002a489aa8cd6c64d31a2, type: 3}
+      count: 10
   mapLayout:
     towerPlaceables: []
     background: {fileID: 0}
