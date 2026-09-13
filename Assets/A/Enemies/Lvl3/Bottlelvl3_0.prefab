@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   hp: 100
   maxHp: 50
-  speed: 0.7
+  speed: 0.6
   damage: 20
   value: 3
   order: 0
