@@ -110,7 +110,7 @@ MonoBehaviour:
   level: 0
   shootSpeed: 7
   shootRate: 1
-  range: 1
+  range: 2
   enemiesInRange: []
 --- !u!58 &-6065484974962772102
 CircleCollider2D:

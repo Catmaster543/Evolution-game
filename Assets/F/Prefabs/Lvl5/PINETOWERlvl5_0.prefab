@@ -108,9 +108,9 @@ MonoBehaviour:
   bullet: {fileID: 5372160078843446109, guid: 958941757bc68ab46825b37707c42722, type: 3}
   treeType: 
   level: 0
-  shootSpeed: 20
+  shootSpeed: 50
   shootRate: 2
-  range: 4
+  range: 7
   enemiesInRange: []
 --- !u!58 &-2152252585078977324
 CircleCollider2D:

@@ -108,8 +108,8 @@ MonoBehaviour:
   bullet: {fileID: 1393682700995743765, guid: 3b247a472452045419f43a3d7545cdeb, type: 3}
   treeType: 
   level: 0
-  shootSpeed: 15
-  shootRate: 0.5
+  shootSpeed: 17
+  shootRate: 0.4
   range: 6
   enemiesInRange: []
 --- !u!58 &3019334304671773249
