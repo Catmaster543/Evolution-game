@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Balance : MonoBehaviour
 {
-    public int balance;
+    public float balance;
     public TextMeshProUGUI balanceText;
 
     void Update()
