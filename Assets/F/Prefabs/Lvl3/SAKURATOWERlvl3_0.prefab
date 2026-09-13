@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1844768806194106241}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8281, y: -3.7477, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.72308, y: 2.8171566, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
   bullet: {fileID: 2880866996790891528, guid: d8fbd62eebf18624ebc94bd6550663f2, type: 3}
-  treeType: 
+  treeType: Sakura
   level: 0
   shootSpeed: 15
   shootRate: 0.5

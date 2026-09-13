@@ -31,6 +31,8 @@ public class Shop : MonoBehaviour
     public int palmPrice;
     public int sakuraPrice;
 
+    public string purchasedTreeType;
+
     public int cost;
 
     private Map map;
@@ -60,6 +62,7 @@ public class Shop : MonoBehaviour
         if (balance.balance >= pinePrice)
         {
             purchasedTower = pineTree;
+            purchasedTreeType = "Pine";
             cost = pinePrice;
             Debug.Log("Purchased pine tree set, moving on to placing it");
             StartCoroutine(map.PlaceATree());
@@ -72,6 +75,7 @@ public class Shop : MonoBehaviour
         if (balance.balance >= palmPrice)
         {
             purchasedTower = palmTree;
+            purchasedTreeType = "Palm";
             cost = palmPrice;
             Debug.Log("Purchased palm tree set, moving on to placing it");
             StartCoroutine(map.PlaceATree());
@@ -84,6 +88,7 @@ public class Shop : MonoBehaviour
         if (balance.balance >= sakuraPrice)
         {
             purchasedTower = sakuraTree;
+            purchasedTreeType = "Sakura";
             cost = sakuraPrice;
             Debug.Log("Purchased sakura tree set, moving on to placing it");
             StartCoroutine(map.PlaceATree());

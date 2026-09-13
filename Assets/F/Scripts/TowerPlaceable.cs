@@ -1,5 +1,6 @@
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class TowerPlaceable : MonoBehaviour
 {
@@ -16,16 +17,47 @@ public class TowerPlaceable : MonoBehaviour
         shop = GameObject.FindGameObjectWithTag("Shopkeeper").GetComponent<Shop>();
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
         balance = GameObject.FindGameObjectWithTag("Balance").GetComponent<Balance>();
-
-        gameObject.SetActive(false);
     }
 
     public void Clicked()
     {
-        tower = shop.purchasedTower;
-        Debug.Log($"Placing tree {tower.name}");
-        Instantiate(tower, gameObject.transform.position, Quaternion.identity);
-        Debug.Log("Placed tree");
+        if (tower != null)
+        {
+            if (tower.GetComponent<Tower>().treeType == shop.purchasedTreeType)
+            {
+                int level = tower.GetComponent<Tower>().level;
+                if (shop.purchasedTreeType == "Pine" && level + 1 < map.pineTowers.Length)
+                {
+                    Destroy(tower);
+                    tower = Instantiate(map.pineTowers[level+1], transform.position, quaternion.identity);
+                    tower.GetComponent<Tower>().level = level + 1;
+                    tower.GetComponent<Tower>().treeType = "Pine";
+                }
+                else if (shop.purchasedTreeType == "Palm" && level + 1 < map.palmTowers.Length)
+                {
+                    Destroy(tower);
+                    tower = Instantiate(map.palmTowers[level+1], transform.position, quaternion.identity);
+                    tower.GetComponent<Tower>().level = level + 1;
+                    tower.GetComponent<Tower>().treeType = "Palm";
+                }
+                
+                else if (shop.purchasedTreeType == "Sakura" && level + 1 < map.sakuraTowers.Length)
+                {
+                    Destroy(tower);
+                    tower = Instantiate(map.sakuraTowers[level + 1], transform.position, quaternion.identity);
+                    tower.GetComponent<Tower>().level = level + 1;
+                    tower.GetComponent<Tower>().treeType = "Sakura";
+                }
+            }
+        }
+        else
+        {
+            tower = Instantiate(shop.purchasedTower, gameObject.transform.position, Quaternion.identity);
+            Debug.Log($"Placing tree {tower.name}");
+            Debug.Log("Placed tree");
+        }
+        taken = true;
+        map.lastPlacedSpot = this;
         balance.balance -= shop.cost;
         map.placed = true;
     }

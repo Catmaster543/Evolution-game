@@ -9,7 +9,7 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] public string treeType;
-    [SerializeField] private int level;
+    [SerializeField] public int level;
     [SerializeField] private float shootSpeed;
     [SerializeField] private float shootRate;
     [SerializeField] private float range;

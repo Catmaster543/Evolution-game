@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8802866578055064644}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.3834, y: 0.4191, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.8496, y: 2.5862, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
   bullet: {fileID: 6022528668834556624, guid: d1ec7c6df6d7a7a4a9a73b2f0ce4a37e, type: 3}
-  treeType: 
+  treeType: Pine
   level: 0
   shootSpeed: 20
   shootRate: 1

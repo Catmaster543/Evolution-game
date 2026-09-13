@@ -68,12 +68,15 @@ public class EnemyWaveManager : MonoBehaviour
     [SerializeField] private bool updateShop;
     [SerializeField] public ShopLayout shopLayout;
     [SerializeField] public ShopLayoutUpdate shopUpdate;
+    [SerializeField] private bool boxOperation;
+    [SerializeField] private GameObject whiteBox;
     [SerializeField] private bool updateCurrency;
     [SerializeField] private GameObject currencyBox;
     [SerializeField] private TextMeshProUGUI currencyText;
     [SerializeField] private Sprite newCurrencyBox;
     [SerializeField] private bool isFirstManager;
     [SerializeField] private bool isLastManager;
+    [SerializeField] private int secsTillNextWorld;
 
     public int waveNumber;
 
@@ -114,6 +117,11 @@ public class EnemyWaveManager : MonoBehaviour
             shopLayout.pot1.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot1;
             shopLayout.pot2.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot2;
             shopLayout.pot3.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot3;
+        }
+
+        if (boxOperation)
+        {
+            whiteBox.gameObject.SetActive(false);
         }
 
         if (updateCurrency)
@@ -166,6 +174,7 @@ public class EnemyWaveManager : MonoBehaviour
         }
         if (!isLastManager)
         {
+            yield return new WaitForSeconds(secsTillNextWorld);
             nextWaveManager.SetActive(true);
             nextWaveManager.tag = "Wave manager";
             Debug.Log($"Next wave manager has been set up! By: {gameObject.name}");
