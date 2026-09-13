@@ -82,7 +82,7 @@ public class Shop : MonoBehaviour
             purchasedTower = palmTree;
             purchasedTreeType = "Palm";
             cost = palmPrice;
-            palmPrice = Mathf.Round(pinePrice * palmMultiplier);
+            palmPrice = Mathf.Round(palmPrice * palmMultiplier);
             Debug.Log("Purchased palm tree set, moving on to placing it");
             StartCoroutine(map.PlaceATree());
             palmCostText.text = palmPrice.ToString();
@@ -97,7 +97,7 @@ public class Shop : MonoBehaviour
             purchasedTower = sakuraTree;
             purchasedTreeType = "Sakura";
             cost = sakuraPrice;
-            sakuraPrice = Mathf.Round(pinePrice * sakuraMultiplier);
+            sakuraPrice = Mathf.Round(sakuraPrice * sakuraMultiplier);
             Debug.Log("Purchased sakura tree set, moving on to placing it");
             StartCoroutine(map.PlaceATree());
             sakuraCostText.text = sakuraPrice.ToString();
