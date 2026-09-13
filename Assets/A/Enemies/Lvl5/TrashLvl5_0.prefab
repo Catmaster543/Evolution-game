@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7bd73d3013ee1418971cdc6ae9a145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  hp: 100
+  hp: 400
   maxHp: 100
   speed: 1.5
   damage: 60
