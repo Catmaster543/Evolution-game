@@ -1,4 +1,4 @@
-using Microsoft.Unity.VisualStudio.Editor;
+//using Microsoft.Unity.VisualStudio.Editor;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
@@ -96,6 +96,9 @@ public class EnemyWaveManager : MonoBehaviour
 
     public MapLayout oldMapLayout;
 
+    public GameObject diaBox;
+    //public GameObject diaBox2;
+
     public int waveNumber;
 
     private GameObject prevWaveManager;
@@ -114,8 +117,15 @@ public class EnemyWaveManager : MonoBehaviour
 
         //map.DeActivateAllSpots();
 
+        if (managerNumber == 1)
+        {
+            diaBox.SetActive(true);
+        }
+
         if (managerNumber == 2)
         {
+            //diaBox2.SetActive(true);
+
             slot1.transform.position = slot1Pos2.position;
             slot3.transform.position = slot3Pos2.position;
 

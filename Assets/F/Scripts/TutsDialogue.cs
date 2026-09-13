@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 
 
-public class Dialogue : MonoBehaviour
+public class TutDialogue : MonoBehaviour
 {   
     int i = 0;
     public TextMeshProUGUI textComponent;
@@ -11,8 +11,7 @@ public class Dialogue : MonoBehaviour
     private float textSpeed = 0.05f;
     private int index;
 
-    public GameObject splaScreen;
-    public GameObject menu;
+    bool gone = false;
 
     void Start()
     {
@@ -21,11 +20,12 @@ public class Dialogue : MonoBehaviour
     }
     void Update()
     {
-        if (i == 8)
+        if (i == 1 && !gone)
         {
-            splaScreen.SetActive(false);
-            menu.SetActive(true);
+            gameObject.SetActive(false);
+            gone = true;
         }
+
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             i++;
