@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 
@@ -79,5 +80,10 @@ public class Map : MonoBehaviour
         {
             spot.SetActive(false);
         }
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("Main menu");
     }
 }

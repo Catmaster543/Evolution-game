@@ -48,6 +48,7 @@ public class TowerPlaceable : MonoBehaviour
                     tower.GetComponent<Tower>().level = level + 1;
                     tower.GetComponent<Tower>().treeType = "Sakura";
                 }
+                balance.balance -= shop.cost;
             }
         }
         else
@@ -55,10 +56,10 @@ public class TowerPlaceable : MonoBehaviour
             tower = Instantiate(shop.purchasedTower, gameObject.transform.position, Quaternion.identity);
             Debug.Log($"Placing tree {tower.name}");
             Debug.Log("Placed tree");
+            balance.balance -= shop.cost;
         }
         taken = true;
         map.lastPlacedSpot = this;
-        balance.balance -= shop.cost;
         map.placed = true;
     }
 }

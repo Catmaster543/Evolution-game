@@ -8,16 +8,17 @@ public class Player : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI hpText;
     bool sayImDead = true;
+
+    [SerializeField] GameObject gameoverScreen;
     void Update()
     {
         if (hp <= 0)
         {
             if (sayImDead)
             {
-                Debug.Log("I'm died X(");
+                gameoverScreen.SetActive(true);
                 sayImDead = false;
             }
-            // Game over
         }
 
         hpText.text = hp.ToString();
