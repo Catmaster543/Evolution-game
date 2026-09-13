@@ -78,6 +78,24 @@ public class EnemyWaveManager : MonoBehaviour
     [SerializeField] private bool isLastManager;
     [SerializeField] private int secsTillNextWorld;
 
+    public bool spawn4thSlot;
+    public int managerNumber;
+
+    public GameObject slot1;
+    public GameObject slot2;
+    public GameObject slot3;
+    public GameObject slot4;
+    public GameObject slot5;
+    public GameObject slot6;
+
+    public Transform slot1Pos2;
+    public Transform slot3Pos2;
+    public Transform slot1Pos3;
+    public Transform slot2Pos3;
+    public Transform slot3Pos3;
+
+    public MapLayout oldMapLayout;
+
     public int waveNumber;
 
     private GameObject prevWaveManager;
@@ -87,9 +105,44 @@ public class EnemyWaveManager : MonoBehaviour
 
     public List<GameObject> enemies = new();
 
+    Map map;
+
     private float timeLeft;
     void Start()
     {
+        map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
+
+        //map.DeActivateAllSpots();
+
+        if (managerNumber == 2)
+        {
+            slot1.transform.position = slot1Pos2.position;
+            slot3.transform.position = slot3Pos2.position;
+
+            slot1.GetComponent<TowerPlaceable>().MoveTower();
+            slot2.GetComponent<TowerPlaceable>().MoveTower();
+        }
+        else if (managerNumber == 3)
+        {
+            slot1.transform.position = slot1Pos3.position;
+            slot2.transform.position = slot2Pos3.position;
+            slot3.transform.position = slot3Pos3.position;
+
+            slot1.GetComponent<TowerPlaceable>().MoveTower();
+            slot2.GetComponent<TowerPlaceable>().MoveTower();
+            slot3.GetComponent<TowerPlaceable>().MoveTower();
+
+            slot4.SetActive(true);
+        }
+        else if (managerNumber == 4)
+        {
+            slot5.SetActive(true);
+        }
+        else if (managerNumber == 5)
+        {
+            slot6.SetActive(true);
+        }
+
         Debug.Log($"Reporting in action! -{gameObject.name}");
         if (!isFirstManager)
         {
@@ -177,6 +230,7 @@ public class EnemyWaveManager : MonoBehaviour
             yield return new WaitForSeconds(secsTillNextWorld);
             nextWaveManager.SetActive(true);
             nextWaveManager.tag = "Wave manager";
+            nextWaveManager.GetComponent<EnemyWaveManager>().oldMapLayout = mapLayout;
             Debug.Log($"Next wave manager has been set up! By: {gameObject.name}");
             Debug.Log($"Goodbye world! -{gameObject.name}");
             Destroy(gameObject);
