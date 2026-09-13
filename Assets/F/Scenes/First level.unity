@@ -171,8 +171,16 @@ MonoBehaviour:
     randomizeSpawnTime: 0
     randomRange: 1
     enemies:
-    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
+    - enemyObject: {fileID: 6732003482781929872, guid: e905ad869c34f2246b530debcc2d3145, type: 3}
       count: 1
+  - name: 1
+    spawnInterval: 1
+    spacingToNextWave: 0
+    randomizeSpawnTime: 0
+    randomRange: 1
+    enemies:
+    - enemyObject: {fileID: 2411963936764042299, guid: 2f4a338ac07e44940bc3b6fd59af15d8, type: 3}
+      count: 2
   mapLayout:
     towerPlaceables: []
     background: {fileID: 0}
@@ -444,26 +452,30 @@ MonoBehaviour:
   waves:
   - name: 1
     spawnInterval: 1
-    spacingToNextWave: 0
+    spacingToNextWave: 10
     randomizeSpawnTime: 1
     randomRange: 2
     enemies:
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
+    - enemyObject: {fileID: 957003646910048543, guid: 6410d3940d3163648bee444c4c9a1543, type: 3}
       count: 5
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 5
+    - enemyObject: {fileID: 2411963936764042299, guid: 2f4a338ac07e44940bc3b6fd59af15d8, type: 3}
+      count: 4
   - name: 2
     spawnInterval: 1
     spacingToNextWave: 0
     randomizeSpawnTime: 0
-    randomRange: 1
+    randomRange: 3
     enemies:
-    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
+    - enemyObject: {fileID: 3283956014515370344, guid: b6334b814144c9b4086268460ef6822f, type: 3}
       count: 10
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 3
-    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
-      count: 3
+  - name: 2
+    spawnInterval: 1
+    spacingToNextWave: 0
+    randomizeSpawnTime: 0
+    randomRange: 3
+    enemies:
+    - enemyObject: {fileID: 7105215728056346661, guid: 543b1688186366f4b97f3f7a08ebb304, type: 3}
+      count: 4
   mapLayout:
     towerPlaceables: []
     background: {fileID: 0}
@@ -1216,22 +1228,22 @@ MonoBehaviour:
     randomizeSpawnTime: 1
     randomRange: 2
     enemies:
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 5
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 5
+    - enemyObject: {fileID: 3583849933003393996, guid: 39a09dab072e4594d914b16cc77dee9a, type: 3}
+      count: 10
+    - enemyObject: {fileID: 3366723591773873230, guid: ba2033d8cc7002a489aa8cd6c64d31a2, type: 3}
+      count: 20
   - name: 2
     spawnInterval: 1
-    spacingToNextWave: 0
+    spacingToNextWave: 5
     randomizeSpawnTime: 0
     randomRange: 1
     enemies:
-    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
+    - enemyObject: {fileID: 3583849933003393996, guid: 39a09dab072e4594d914b16cc77dee9a, type: 3}
       count: 10
-    - enemyObject: {fileID: 3290608549937627776, guid: 3d307317e38fa1e43b70548f0af6e037, type: 3}
-      count: 3
-    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
-      count: 3
+    - enemyObject: {fileID: 3366723591773873230, guid: ba2033d8cc7002a489aa8cd6c64d31a2, type: 3}
+      count: 10
+    - enemyObject: {fileID: 3366723591773873230, guid: 358c1482bb8f21f408deeb6b91093bdc, type: 3}
+      count: 5
   mapLayout:
     towerPlaceables: []
     background: {fileID: 0}
@@ -2394,6 +2406,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781901898}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
+=======
+--- !u!1001 &897856154
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2715281552841062226, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: shootRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178893148497809852, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 178893148497809852, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 178893148497809852, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178893148497809852, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 178893148497809852, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178893148497809852, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178893148497809852, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178893148497809852, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178893148497809852, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178893148497809852, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605342192129444679, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_Name
+      value: SAKURATOWERlvl5_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605342192129444679, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 087c1ee8ed91ece4c8276dd9f2e0988d, type: 3}
+>>>>>>> Stashed changes
 --- !u!1 &919158832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5064,6 +5144,63 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1001 &1835461768
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802866578055064644, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
+      propertyPath: m_Name
+      value: PINETOWERlvl2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
 --- !u!1 &1972883467
 GameObject:
   m_ObjectHideFlags: 0
@@ -5316,4 +5453,9 @@ SceneRoots:
   - {fileID: 229462820}
   - {fileID: 1024578567}
   - {fileID: 542532751}
+<<<<<<< Updated upstream
   - {fileID: 1338335574}
+=======
+  - {fileID: 897856154}
+  - {fileID: 1835461768}
+>>>>>>> Stashed changes
