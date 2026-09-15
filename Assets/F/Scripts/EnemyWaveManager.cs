@@ -1,4 +1,3 @@
-//using Microsoft.Unity.VisualStudio.Editor;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
@@ -30,7 +29,7 @@ public class SpawnAbleEnemy
 [System.Serializable]
 public class MapLayout
 {
-    public TowerPlaceable[] towerPlaceables;
+    public List<TowerPlaceable> towerPlaceables = new();
     public SpriteRenderer background;
     public Sprite newBackground;
     public SplineContainer spline;
@@ -115,8 +114,6 @@ public class EnemyWaveManager : MonoBehaviour
     {
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
 
-        //map.DeActivateAllSpots();
-
         if (managerNumber == 1)
         {
             diaBox.SetActive(true);
@@ -143,14 +140,23 @@ public class EnemyWaveManager : MonoBehaviour
             slot3.GetComponent<TowerPlaceable>().MoveTower();
 
             slot4.SetActive(true);
+            mapLayout.towerPlaceables.Add(slot4.GetComponent<TowerPlaceable>());
+            map.spots.Add(slot4.GetComponent<TowerPlaceable>());
+            slot4.SetActive(false);
         }
         else if (managerNumber == 4)
         {
             slot5.SetActive(true);
+            mapLayout.towerPlaceables.Add(slot5.GetComponent<TowerPlaceable>());
+            map.spots.Add(slot5.GetComponent<TowerPlaceable>());
+            slot5.SetActive(false);
         }
         else if (managerNumber == 5)
         {
             slot6.SetActive(true);
+            mapLayout.towerPlaceables.Add(slot6.GetComponent<TowerPlaceable>());
+            map.spots.Add(slot6.GetComponent<TowerPlaceable>());
+            slot6.SetActive(false);
         }
 
         Debug.Log($"Reporting in action! -{gameObject.name}");
@@ -192,7 +198,6 @@ public class EnemyWaveManager : MonoBehaviour
             currencyBox.GetComponent<UnityEngine.UI.Image>().sprite = newCurrencyBox;
             currencyText.color = new Color(113, 65, 71);
         }
-
         StartCoroutine(waitForNextWave());
     }
     void Update()

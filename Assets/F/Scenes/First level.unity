@@ -3530,7 +3530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -6.26, y: 8.42}
+  m_AnchoredPosition: {x: -6.26, y: 8.32}
   m_SizeDelta: {x: 40, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1024578563
@@ -3978,6 +3978,7 @@ GameObject:
   - component: {fileID: 1182444272}
   - component: {fileID: 1182444271}
   - component: {fileID: 1182444270}
+  - component: {fileID: 1182444275}
   - component: {fileID: 1182444274}
   m_Layer: 5
   m_Name: Dia
@@ -4077,6 +4078,27 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182444269}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c576bf24a0fda024e947e5b6ec573873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutDialogue
+  textComponent: {fileID: 1292753887}
+  lines:
+  - 'It was supposed to be about nature versus pollution.... '
+  - You can keep the corruption at bay by planting trees.
+  - After a tree is planted, it cannot be removed.
+  - Another tree of the same variant CAN be placed on it tho.
+  - I will evolve the game as you play.
+  - 
+  isTyping: 0
+--- !u!114 &1182444275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182444269}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5de914b3d7ea7144931381d590f5152, type: 3}
   m_Name: 

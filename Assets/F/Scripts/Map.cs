@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Map : MonoBehaviour
 {
-    [SerializeField] List<TowerPlaceable> spots = new();
+    [SerializeField] public List<TowerPlaceable> spots = new();
     [SerializeField] public GameObject[] pineTowers;
     [SerializeField] public GameObject[] palmTowers;
     [SerializeField] public GameObject[] sakuraTowers;
@@ -22,31 +22,36 @@ public class Map : MonoBehaviour
     void Start()
     {
         shop = GameObject.FindGameObjectWithTag("Shopkeeper").GetComponent<Shop>();
-        CheckPlaceableSpots();
+        StartCoroutine(CheckPlaceableSpots());
         DeActivateAllSpots();
-    }
-    void Update()
-    {
-        
     }
 
     public IEnumerator PlaceATree()
     {
         Debug.Log("Placing a tree");
+        Debug.Log("Turning on all last spots");
+        ActivateAllSpots();
+        Debug.Log("Checking tree placement");
+        yield return CheckPlaceableSpots();
+        DeActivateAllSpots();
+        Debug.Log($"Checked all spots, result: {spots}, count: {spots.Count}");
         foreach (TowerPlaceable spot in spots)
         {
             if (!spot.taken)
             {
+                Debug.Log($"Spot {spot.name} is empty, turning it on!");
                 spot.gameObject.SetActive(true);
             }
             else if (spot.tower.GetComponent<Tower>().treeType == shop.purchasedTreeType)
             {
+                Debug.Log($"Spot {spot.name} is empty, turning it on");
                 spot.gameObject.SetActive(true);
                 spot.tower.GetComponent<SpriteRenderer>().color = Color.yellow;
             }
         }
         Debug.Log("Turned on all spots, waiting for placement");
         yield return new WaitUntil(() => placed);
+        Debug.Log("Tree placed, finishing placement");
         FinishPlacingTree(shop.purchasedTower);
     }
 
@@ -64,13 +69,19 @@ public class Map : MonoBehaviour
         placed = false;
     }
 
-    public void CheckPlaceableSpots()
+    public IEnumerator CheckPlaceableSpots()
     {
+        Debug.Log("Checking all placeable spots.. -Map");
+        spots.Clear();
+        Debug.Log("Removed current spots list");
         GameObject[] spawnableSpots = GameObject.FindGameObjectsWithTag("Tower spot");
         foreach (GameObject spot in spawnableSpots)
         {
             spots.Add(spot.GetComponentInChildren<TowerPlaceable>());
         }
+        Debug.Log($"Created new list of spots; {spots}, amount: {spots.Count}");
+        Debug.Log("Now deactivating spots..");
+        yield return null;
     }
 
     public void DeActivateAllSpots()
@@ -79,6 +90,15 @@ public class Map : MonoBehaviour
         foreach (GameObject spot in spawnableSpots)
         {
             spot.SetActive(false);
+        }
+        Debug.Log("All spots deactivated -Map");
+    }
+
+    public void ActivateAllSpots()
+    {
+        foreach (TowerPlaceable spot in spots)
+        {
+            spot.gameObject.SetActive(true);
         }
     }
 

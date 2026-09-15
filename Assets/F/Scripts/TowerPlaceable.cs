@@ -21,6 +21,7 @@ public class TowerPlaceable : MonoBehaviour
 
     public void Clicked()
     {
+        Debug.Log($"I ({gameObject.name}) have been clicked");
         if (tower != null)
         {
             if (tower.GetComponent<Tower>().treeType == shop.purchasedTreeType)

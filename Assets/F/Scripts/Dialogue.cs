@@ -10,6 +10,7 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     private float textSpeed = 0.05f;
     private int index;
+    public bool isTyping;
 
     public GameObject splaScreen;
     public GameObject menu;
@@ -40,10 +41,23 @@ public class Dialogue : MonoBehaviour
 
     System.Collections.IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray())
+        if (isTyping)
         {
-            textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            textComponent.text = lines[index-1];
+            isTyping = false;
+            StopCoroutine(TypeLine());
+        }
+        else
+        {
+            isTyping = true;
+            textComponent.text = string.Empty;
+
+            foreach (char c in lines[index].ToCharArray())
+            {
+                textComponent.text += c;
+                yield return new WaitForSeconds(textSpeed);
+            }
+            isTyping = false;
         }
     }
     public void NextLine()
