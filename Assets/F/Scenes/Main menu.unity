@@ -158,6 +158,8 @@ MonoBehaviour:
   - they keep leaking into the unaffected ones...
   - How will I finish my game on time??
   - Oh wait! You can keep them at bay for me, while I rework the game!
+  - '-'
+  isTyping: 0
   splaScreen: {fileID: 749978690}
   menu: {fileID: 994990098}
 --- !u!4 &66482166

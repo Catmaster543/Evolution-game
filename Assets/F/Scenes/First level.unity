@@ -196,9 +196,9 @@ MonoBehaviour:
     bgObj: {fileID: 0}
     treesButton: {fileID: 0}
     upgradesButton: {fileID: 0}
-    pot1: {fileID: 0}
-    pot2: {fileID: 0}
-    pot3: {fileID: 0}
+    pot1: {fileID: 374630817}
+    pot2: {fileID: 1095308366}
+    pot3: {fileID: 1972883467}
   shopUpdate:
     newBg: {fileID: 0}
     newTrees: {fileID: 0}
@@ -215,7 +215,6 @@ MonoBehaviour:
   isFirstManager: 1
   isLastManager: 0
   secsTillNextWorld: 0
-  spawn4thSlot: 0
   managerNumber: 0
   slot1: {fileID: 0}
   slot2: {fileID: 0}
@@ -683,7 +682,6 @@ MonoBehaviour:
   isFirstManager: 0
   isLastManager: 0
   secsTillNextWorld: 5
-  spawn4thSlot: 0
   managerNumber: 2
   slot1: {fileID: 366278787}
   slot2: {fileID: 1258787784}
@@ -1624,7 +1622,6 @@ MonoBehaviour:
   isFirstManager: 0
   isLastManager: 0
   secsTillNextWorld: 5
-  spawn4thSlot: 0
   managerNumber: 3
   slot1: {fileID: 366278787}
   slot2: {fileID: 1258787784}
@@ -3181,7 +3178,6 @@ MonoBehaviour:
   isFirstManager: 0
   isLastManager: 1
   secsTillNextWorld: 5
-  spawn4thSlot: 0
   managerNumber: 5
   slot1: {fileID: 0}
   slot2: {fileID: 0}
@@ -3851,7 +3847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1095308367
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5663,7 +5659,6 @@ MonoBehaviour:
   isFirstManager: 0
   isLastManager: 0
   secsTillNextWorld: 5
-  spawn4thSlot: 0
   managerNumber: 4
   slot1: {fileID: 0}
   slot2: {fileID: 0}
@@ -6608,7 +6603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1972883468
 RectTransform:
   m_ObjectHideFlags: 0

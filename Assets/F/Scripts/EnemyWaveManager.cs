@@ -77,7 +77,6 @@ public class EnemyWaveManager : MonoBehaviour
     [SerializeField] private bool isLastManager;
     [SerializeField] private int secsTillNextWorld;
 
-    public bool spawn4thSlot;
     public int managerNumber;
 
     public GameObject slot1;
@@ -128,6 +127,8 @@ public class EnemyWaveManager : MonoBehaviour
 
             slot1.GetComponent<TowerPlaceable>().MoveTower();
             slot2.GetComponent<TowerPlaceable>().MoveTower();
+
+            shopLayout.pot1.SetActive(true);
         }
         else if (managerNumber == 3)
         {
@@ -143,6 +144,8 @@ public class EnemyWaveManager : MonoBehaviour
             mapLayout.towerPlaceables.Add(slot4.GetComponent<TowerPlaceable>());
             map.spots.Add(slot4.GetComponent<TowerPlaceable>());
             slot4.SetActive(false);
+
+            shopLayout.pot2.SetActive(true);
         }
         else if (managerNumber == 4)
         {
@@ -150,6 +153,8 @@ public class EnemyWaveManager : MonoBehaviour
             mapLayout.towerPlaceables.Add(slot5.GetComponent<TowerPlaceable>());
             map.spots.Add(slot5.GetComponent<TowerPlaceable>());
             slot5.SetActive(false);
+
+            shopLayout.pot3.SetActive(true);
         }
         else if (managerNumber == 5)
         {
