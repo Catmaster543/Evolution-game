@@ -199,6 +199,9 @@ MonoBehaviour:
     pot1: {fileID: 374630817}
     pot2: {fileID: 1095308366}
     pot3: {fileID: 1972883467}
+    pot1Tree: {fileID: 0}
+    pot2Tree: {fileID: 0}
+    pot3Tree: {fileID: 0}
   shopUpdate:
     newBg: {fileID: 0}
     newTrees: {fileID: 0}
@@ -206,6 +209,9 @@ MonoBehaviour:
     newPot1: {fileID: 0}
     newPot2: {fileID: 0}
     newPot3: {fileID: 0}
+    newPot1Tree: {fileID: 0}
+    newPot2Tree: {fileID: 0}
+    newPot3Tree: {fileID: 0}
   boxOperation: 0
   whiteBox: {fileID: 0}
   updateCurrency: 0
@@ -215,7 +221,7 @@ MonoBehaviour:
   isFirstManager: 1
   isLastManager: 0
   secsTillNextWorld: 0
-  managerNumber: 0
+  managerNumber: 1
   slot1: {fileID: 0}
   slot2: {fileID: 0}
   slot3: {fileID: 0}
@@ -237,6 +243,81 @@ MonoBehaviour:
   waveNumber: 0
   nextWaveManager: {fileID: 277774689}
   enemies: []
+--- !u!1 &190320863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 190320864}
+  - component: {fileID: 190320866}
+  - component: {fileID: 190320865}
+  m_Layer: 5
+  m_Name: Smol pine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &190320864
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190320863}
+  m_LocalRotation: {x: -0, y: -0, z: 0.043559738, w: 0.99905086}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9499999, y: 5.8, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1416290560}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.993}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 573, y: 233}
+  m_SizeDelta: {x: 100, y: 30.046}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &190320865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190320863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -7091499691749158995, guid: 3711dbd65da46ae4f89d8e026c1699f8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &190320866
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190320863}
+  m_CullTransparentMesh: 1
 --- !u!1 &215102031
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +374,7 @@ MonoBehaviour:
   taken: 0
   shop: {fileID: 0}
   map: {fileID: 0}
+  tutDialogue: {fileID: 0}
 --- !u!114 &215102034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +748,9 @@ MonoBehaviour:
     pot1: {fileID: 374630817}
     pot2: {fileID: 1095308366}
     pot3: {fileID: 1972883467}
+    pot1Tree: {fileID: 190320863}
+    pot2Tree: {fileID: 776605652}
+    pot3Tree: {fileID: 0}
   shopUpdate:
     newBg: {fileID: 8273030664567297080, guid: d91adf8ed82f79545a85dc436fa91cc9, type: 3}
     newTrees: {fileID: 2294331670233252869, guid: d2324f69ec5ecc8468a510a9f9597dc0, type: 3}
@@ -673,6 +758,9 @@ MonoBehaviour:
     newPot1: {fileID: 1768059660945561757, guid: c9e4a1abcf9e8fc49ae5e9d3a82fc778, type: 3}
     newPot2: {fileID: 7514061829055241595, guid: 4a5cd1b3e10002e4fb76d7ea1c01002e, type: 3}
     newPot3: {fileID: 8174702314796205128, guid: acc5aeb3aeb27b24fa04102bf0511041, type: 3}
+    newPot1Tree: {fileID: -7091499691749158995, guid: 3711dbd65da46ae4f89d8e026c1699f8, type: 3}
+    newPot2Tree: {fileID: 4966892669619919011, guid: 09e30c8a13c796a44b3e6c92949cf2e7, type: 3}
+    newPot3Tree: {fileID: 0}
   boxOperation: 1
   whiteBox: {fileID: 292683788}
   updateCurrency: 0
@@ -769,7 +857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -850,6 +938,7 @@ MonoBehaviour:
   taken: 0
   shop: {fileID: 0}
   map: {fileID: 0}
+  tutDialogue: {fileID: 0}
 --- !u!114 &326108124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,8 +1098,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1100,7 +1189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &366278788
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1137,6 +1226,7 @@ MonoBehaviour:
   taken: 0
   shop: {fileID: 0}
   map: {fileID: 0}
+  tutDialogue: {fileID: 0}
 --- !u!114 &366278790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1249,7 +1339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &374630818
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1267,7 +1357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 586.61, y: 130.8}
+  m_AnchoredPosition: {x: 606, y: 130.8}
   m_SizeDelta: {x: 241.29, y: 45.243}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374630819
@@ -1606,6 +1696,9 @@ MonoBehaviour:
     pot1: {fileID: 374630817}
     pot2: {fileID: 1095308366}
     pot3: {fileID: 1972883467}
+    pot1Tree: {fileID: 190320863}
+    pot2Tree: {fileID: 776605652}
+    pot3Tree: {fileID: 872513060}
   shopUpdate:
     newBg: {fileID: 2925990329313537004, guid: 54b8b96574aabd84ba9a7c69a094a7c2, type: 3}
     newTrees: {fileID: 8906031987148823092, guid: 937d207566440024eb5f2204528df4c1, type: 3}
@@ -1613,6 +1706,9 @@ MonoBehaviour:
     newPot1: {fileID: 8079415027678571820, guid: e86d8402bb8641e47a11193337dfc76b, type: 3}
     newPot2: {fileID: -5441880597631512270, guid: 2540925c3c0f7ff4cb5fa580b3320aaf, type: 3}
     newPot3: {fileID: -1475453382684245871, guid: 7436f5dc5fd110a42b8a39f10c23a5cf, type: 3}
+    newPot1Tree: {fileID: -2274686205586519086, guid: 53f113ec967c0bb45b35ab8d2eec4d74, type: 3}
+    newPot2Tree: {fileID: 7256237888234845932, guid: 19864a5ebabe99945bb5867c5dd7efe4, type: 3}
+    newPot3Tree: {fileID: 5284844015556211978, guid: da562de4b9602d84dad26ee2a2de0537, type: 3}
   boxOperation: 0
   whiteBox: {fileID: 0}
   updateCurrency: 1
@@ -2830,6 +2926,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716942626}
   m_CullTransparentMesh: 1
+--- !u!1 &776605652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 776605653}
+  - component: {fileID: 776605655}
+  - component: {fileID: 776605654}
+  m_Layer: 5
+  m_Name: Smol Palm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &776605653
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776605652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1416290560}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 782.3, y: 24.7}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &776605654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776605652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7256237888234845932, guid: 19864a5ebabe99945bb5867c5dd7efe4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &776605655
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776605652}
+  m_CullTransparentMesh: 1
 --- !u!1 &781901898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2949,6 +3120,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781901898}
+  m_CullTransparentMesh: 1
+--- !u!1 &872513060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872513061}
+  - component: {fileID: 872513063}
+  - component: {fileID: 872513062}
+  m_Layer: 5
+  m_Name: Smol sakura
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &872513061
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872513060}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1416290560}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 564, y: -183.6}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &872513062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872513060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -4070382359404630954, guid: b5bc220df1c399545961f1b9b38ba97c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &872513063
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872513060}
   m_CullTransparentMesh: 1
 --- !u!1001 &897856154
 PrefabInstance:
@@ -3162,6 +3408,9 @@ MonoBehaviour:
     pot1: {fileID: 374630817}
     pot2: {fileID: 1095308366}
     pot3: {fileID: 1972883467}
+    pot1Tree: {fileID: 190320863}
+    pot2Tree: {fileID: 776605652}
+    pot3Tree: {fileID: 872513060}
   shopUpdate:
     newBg: {fileID: -8902512215256499377, guid: 2a2f30592329ad545b6b5b9cbfa803fd, type: 3}
     newTrees: {fileID: -77660744149763487, guid: ee742c735ff75fc46a9cbab1d173dd50, type: 3}
@@ -3169,6 +3418,9 @@ MonoBehaviour:
     newPot1: {fileID: -7390478437542185618, guid: d718882fd10db1942806d8875d0758b8, type: 3}
     newPot2: {fileID: 7589122947877512463, guid: 683bda81c9abba04bbd8ad72bce4f031, type: 3}
     newPot3: {fileID: -7858869589308476736, guid: 63ba7f95e1adc6744a0cf201c61b5ec3, type: 3}
+    newPot1Tree: {fileID: -1397907501440917725, guid: caf1c8dfff964e947954a1a293a7e27b, type: 3}
+    newPot2Tree: {fileID: 8767072413110333144, guid: 06151cd396856104ab0ef34fa2788fa0, type: 3}
+    newPot3Tree: {fileID: 4203533903758486875, guid: 40963e68985e45d479c46cf66c0088f5, type: 3}
   boxOperation: 0
   whiteBox: {fileID: 0}
   updateCurrency: 0
@@ -3726,7 +3978,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.918}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 62.7, y: 16.19997}
+  m_AnchoredPosition: {x: 62.7, y: 16.6}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.50000024, y: 0.5000001}
 --- !u!222 &1071301917
@@ -3784,8 +4036,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3944,7 +4196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7514061829055241595, guid: 07ca3cf7751e1f74ca530bfae87ae173, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3974,11 +4226,10 @@ GameObject:
   - component: {fileID: 1182444272}
   - component: {fileID: 1182444271}
   - component: {fileID: 1182444270}
-  - component: {fileID: 1182444275}
   - component: {fileID: 1182444274}
   m_Layer: 5
   m_Name: Dia
-  m_TagString: Untagged
+  m_TagString: Dia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4078,35 +4329,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c576bf24a0fda024e947e5b6ec573873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutDialogue
+  i: 0
   textComponent: {fileID: 1292753887}
   lines:
   - 'It was supposed to be about nature versus pollution.... '
+  - ... well let's get to work!
   - You can keep the corruption at bay by planting trees.
-  - After a tree is planted, it cannot be removed.
-  - Another tree of the same variant CAN be placed on it tho.
-  - I will evolve the game as you play.
+  - Here - try planting this one!
+  - (Click on the yellow square to place the tree there)
+  - After a tree is planted, it cannot be removed..
+  - Soo.. you better have chosen well!
+  - Another tree of the same variant CAN be placed on it tho-
+  - Which will upgrade the tree.
+  - Now I've got to go before the corrupted files eat up the game whole-
+  - I will evolve and fix the game as you play.
   - 
   isTyping: 0
---- !u!114 &1182444275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182444269}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5de914b3d7ea7144931381d590f5152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutDialogue
-  textComponent: {fileID: 1292753887}
-  lines:
-  - 'It was supposed to be about nature versus pollution.... '
-  - You can keep the corruption at bay by planting trees.
-  - After a tree is planted, it cannot be removed.
-  - Another tree of the same variant CAN be placed on it tho.
-  - I will evolve the game as you play.
-  - You can grow new trees by clicking on the flower pots in the store.
+  placing: 0
 --- !u!1 &1189092863
 GameObject:
   m_ObjectHideFlags: 0
@@ -4126,7 +4365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1189092864
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4163,6 +4402,7 @@ MonoBehaviour:
   taken: 0
   shop: {fileID: 0}
   map: {fileID: 0}
+  tutDialogue: {fileID: 0}
 --- !u!114 &1189092866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4313,6 +4553,7 @@ MonoBehaviour:
   taken: 0
   shop: {fileID: 0}
   map: {fileID: 0}
+  tutDialogue: {fileID: 0}
 --- !u!114 &1258787787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5334,8 +5575,11 @@ RectTransform:
   - {fileID: 1344648566}
   - {fileID: 1413186758}
   - {fileID: 781901899}
+  - {fileID: 190320864}
   - {fileID: 374630818}
+  - {fileID: 776605653}
   - {fileID: 1095308367}
+  - {fileID: 872513061}
   - {fileID: 1972883468}
   - {fileID: 292683789}
   m_Father: {fileID: 0}
@@ -5643,6 +5887,9 @@ MonoBehaviour:
     pot1: {fileID: 374630817}
     pot2: {fileID: 1095308366}
     pot3: {fileID: 1972883467}
+    pot1Tree: {fileID: 190320863}
+    pot2Tree: {fileID: 776605652}
+    pot3Tree: {fileID: 872513060}
   shopUpdate:
     newBg: {fileID: -8902512215256499377, guid: 2a2f30592329ad545b6b5b9cbfa803fd, type: 3}
     newTrees: {fileID: 4869203581274160981, guid: 645c47ebd99f71e4a999bc81326ddb63, type: 3}
@@ -5650,6 +5897,9 @@ MonoBehaviour:
     newPot1: {fileID: 4561105199526407238, guid: 312c567ba3a991d42ae1781925aee960, type: 3}
     newPot2: {fileID: 4175679474464182999, guid: 2f17c482a8d89b649a995f871d7d43ed, type: 3}
     newPot3: {fileID: 2709895573629627567, guid: 7f748bbad99371c4fa1be0a41173725e, type: 3}
+    newPot1Tree: {fileID: 1700044910173941861, guid: 6eb5b328cc74b814480806fbbb513f36, type: 3}
+    newPot2Tree: {fileID: 946651708431138748, guid: 6925024020a22784aa3169ca923f8aee, type: 3}
+    newPot3Tree: {fileID: -4070382359404630954, guid: b5bc220df1c399545961f1b9b38ba97c, type: 3}
   boxOperation: 0
   whiteBox: {fileID: 0}
   updateCurrency: 0
@@ -5696,63 +5946,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1544768842
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967053972056986851, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802866578055064644, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
-      propertyPath: m_Name
-      value: PINETOWERlvl2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 377e8187997cf7346b0f437e031bae39, type: 3}
 --- !u!1 &1588128349
 GameObject:
   m_ObjectHideFlags: 0
@@ -5899,8 +6092,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6145,6 +6338,7 @@ MonoBehaviour:
   taken: 0
   shop: {fileID: 0}
   map: {fileID: 0}
+  tutDialogue: {fileID: 0}
 --- !u!114 &1701884275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6621,7 +6815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 586.61, y: -269}
+  m_AnchoredPosition: {x: 605, y: -269}
   m_SizeDelta: {x: 241.29, y: 45.243}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972883469
@@ -6700,7 +6894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 8174702314796205128, guid: 120091d2eb09ab54ba48b04c230aaa7a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7104,4 +7298,3 @@ SceneRoots:
   - {fileID: 2073041697}
   - {fileID: 1182444273}
   - {fileID: 2126380708}
-  - {fileID: 1544768842}

@@ -12,11 +12,25 @@ public class TowerPlaceable : MonoBehaviour
     public Map map;
     
     private Balance balance;
+
+    bool diaConnected;
+
+    public TutDialogue tutDialogue;
     void Start()
     {
         shop = GameObject.FindGameObjectWithTag("Shopkeeper").GetComponent<Shop>();
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
         balance = GameObject.FindGameObjectWithTag("Balance").GetComponent<Balance>();
+
+        if (GameObject.FindGameObjectWithTag("Dia") != null)
+        {
+            tutDialogue = GameObject.FindGameObjectWithTag("Dia").GetComponent<TutDialogue>();
+            diaConnected = true;
+        }
+        else
+        {
+            diaConnected = false;
+        }
     }
 
     public void Clicked()
@@ -41,7 +55,6 @@ public class TowerPlaceable : MonoBehaviour
                     tower.GetComponent<Tower>().level = level + 1;
                     tower.GetComponent<Tower>().treeType = "Palm";
                 }
-                
                 else if (shop.purchasedTreeType == "Sakura" && level + 1 < map.sakuraTowers.Length)
                 {
                     Destroy(tower);
@@ -58,6 +71,11 @@ public class TowerPlaceable : MonoBehaviour
             Debug.Log($"Placing tree {tower.name}");
             Debug.Log("Placed tree");
             balance.balance -= shop.cost;
+        }
+        if (diaConnected)
+        {
+            tutDialogue.placing = false;
+            tutDialogue.i = tutDialogue.i + 1;
         }
         taken = true;
         map.lastPlacedSpot = this;

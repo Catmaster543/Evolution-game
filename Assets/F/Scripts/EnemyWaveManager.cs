@@ -45,6 +45,9 @@ public class ShopLayout
     public GameObject pot1;
     public GameObject pot2;
     public GameObject pot3;
+    public GameObject pot1Tree;
+    public GameObject pot2Tree;
+    public GameObject pot3Tree;
 }
 
 [System.Serializable]
@@ -56,6 +59,9 @@ public class ShopLayoutUpdate
     public Sprite newPot1;
     public Sprite newPot2;
     public Sprite newPot3;
+    public Sprite newPot1Tree;
+    public Sprite newPot2Tree;
+    public Sprite newPot3Tree;
 }
 
 public class EnemyWaveManager : MonoBehaviour
@@ -109,6 +115,7 @@ public class EnemyWaveManager : MonoBehaviour
     Map map;
 
     private float timeLeft;
+    public bool spawn;
     void Start()
     {
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
@@ -122,6 +129,12 @@ public class EnemyWaveManager : MonoBehaviour
         {
             //diaBox2.SetActive(true);
 
+            slot1.SetActive(true);
+            map.spots.Add(slot1.GetComponent<TowerPlaceable>());
+            slot1.SetActive(false);
+            slot3.SetActive(true);
+            map.spots.Add(slot3.GetComponent<TowerPlaceable>());
+            slot3.SetActive(false);
             slot1.transform.position = slot1Pos2.position;
             slot3.transform.position = slot3Pos2.position;
 
@@ -129,6 +142,7 @@ public class EnemyWaveManager : MonoBehaviour
             slot2.GetComponent<TowerPlaceable>().MoveTower();
 
             shopLayout.pot1.SetActive(true);
+            shopLayout.pot1Tree.SetActive(true);
         }
         else if (managerNumber == 3)
         {
@@ -146,6 +160,8 @@ public class EnemyWaveManager : MonoBehaviour
             slot4.SetActive(false);
 
             shopLayout.pot2.SetActive(true);
+            shopLayout.pot2Tree.SetActive(true);
+            shopLayout.pot1Tree.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot1Tree;
         }
         else if (managerNumber == 4)
         {
@@ -155,6 +171,9 @@ public class EnemyWaveManager : MonoBehaviour
             slot5.SetActive(false);
 
             shopLayout.pot3.SetActive(true);
+            shopLayout.pot3Tree.SetActive(true);
+            shopLayout.pot1Tree.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot1Tree;
+            shopLayout.pot2Tree.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot2Tree;
         }
         else if (managerNumber == 5)
         {
@@ -162,6 +181,10 @@ public class EnemyWaveManager : MonoBehaviour
             mapLayout.towerPlaceables.Add(slot6.GetComponent<TowerPlaceable>());
             map.spots.Add(slot6.GetComponent<TowerPlaceable>());
             slot6.SetActive(false);
+
+            shopLayout.pot1Tree.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot1Tree;
+            shopLayout.pot2Tree.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot2Tree;
+            shopLayout.pot3Tree.GetComponent<UnityEngine.UI.Image>().sprite = shopUpdate.newPot3Tree;
         }
 
         Debug.Log($"Reporting in action! -{gameObject.name}");
@@ -203,11 +226,19 @@ public class EnemyWaveManager : MonoBehaviour
             currencyBox.GetComponent<UnityEngine.UI.Image>().sprite = newCurrencyBox;
             currencyText.color = new Color(113, 65, 71);
         }
-        StartCoroutine(waitForNextWave());
+
+        if (managerNumber != 1)
+        {
+            StartCoroutine(waitForNextWave());
+        }
     }
     void Update()
     {
-        
+        if (managerNumber == 1 && spawn)
+        {
+            StartCoroutine(waitForNextWave());
+            spawn = false;
+        }
     }
     
     private IEnumerator waitTillSpawn(Wave wave)
@@ -219,12 +250,12 @@ public class EnemyWaveManager : MonoBehaviour
             for (int i = 0; i < wave.enemies[j].count; i++)
             {
                 timeLeft = wave.spawnInterval;
-                //Debug.Log($"Timeleft is {timeLeft}, apllying multiplier, random ceiling is {wave.randomRange}");
+                Debug.Log($"Timeleft is {timeLeft}, apllying multiplier, random ceiling is {wave.randomRange}");
                 if (wave.randomizeSpawnTime)
                 {
                     timeLeft *= Random.Range(0, wave.randomRange);
                 }
-                //Debug.Log($"Waiting for {timeLeft}");
+                Debug.Log($"Waiting for {timeLeft}");
                 yield return new WaitForSeconds(timeLeft);
                 GameObject spawnedAble = Instantiate(wave.enemies[j].enemyObject, spawnPoint.transform);
                 spawnedAble.GetComponent<Enemy>().order = enemyNumber;
@@ -235,7 +266,7 @@ public class EnemyWaveManager : MonoBehaviour
         }
     }
 
-    private IEnumerator waitForNextWave()
+    public IEnumerator waitForNextWave()
     {
         foreach (Wave wavey in waves)
         {

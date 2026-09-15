@@ -104,6 +104,6 @@ public class Map : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene("Main menu");
+        SceneManager.LoadScene("First level");
     }
 }
