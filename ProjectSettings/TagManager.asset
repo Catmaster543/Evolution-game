@@ -16,6 +16,7 @@ TagManager:
   - Shopkeeper
   - Tower spot
   - Dia
+  - Loading
   layers:
   - Default
   - TransparentFX

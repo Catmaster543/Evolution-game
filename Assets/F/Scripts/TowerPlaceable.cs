@@ -77,6 +77,21 @@ public class TowerPlaceable : MonoBehaviour
             tutDialogue.placing = false;
             tutDialogue.i = tutDialogue.i + 1;
         }
+        if (shop.purchasedTreeType == "Pine")
+        {
+            shop.pinePrice = Mathf.Round(shop.pinePrice * shop.pineMultiplier);
+            shop.pineCostText.text = shop.pinePrice.ToString();
+        }
+        else if (shop.purchasedTreeType == "Palm")
+        {
+            shop.palmPrice = Mathf.Round(shop.palmPrice * shop.palmMultiplier);
+            shop.palmCostText.text = shop.palmPrice.ToString();
+        }
+        else if (shop.purchasedTreeType == "Sakura")
+        {
+            shop.sakuraPrice = Mathf.Round(shop.sakuraPrice * shop.sakuraMultiplier);
+            shop.sakuraCostText.text = shop.sakuraPrice.ToString();
+        }
         taken = true;
         map.lastPlacedSpot = this;
         map.placed = true;
