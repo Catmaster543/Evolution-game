@@ -103,6 +103,8 @@ public class EnemyWaveManager : MonoBehaviour
     public GameObject diaBox;
     //public GameObject diaBox2;
 
+    public GameObject loadingScreen;
+
     public int waveNumber;
 
     private GameObject prevWaveManager;
@@ -119,10 +121,12 @@ public class EnemyWaveManager : MonoBehaviour
     void Start()
     {
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
+        loadingScreen = GameObject.FindGameObjectWithTag("Loading");
 
         if (managerNumber == 1)
         {
             diaBox.SetActive(true);
+            loadingScreen.SetActive(false);
         }
 
         if (managerNumber == 2)
@@ -202,7 +206,7 @@ public class EnemyWaveManager : MonoBehaviour
 
             prevWaveManager = GameObject.FindGameObjectWithTag("Wave manager");
 
-            prevWaveManager.gameObject.SetActive(false);
+            //prevWaveManager.gameObject.SetActive(false);
         }
 
         if (updateShop)
@@ -227,7 +231,7 @@ public class EnemyWaveManager : MonoBehaviour
             currencyText.color = new Color(113, 65, 71);
         }
 
-        if (managerNumber != 1)
+        if (managerNumber != 1 && spawn)
         {
             StartCoroutine(waitForNextWave());
         }
@@ -235,6 +239,11 @@ public class EnemyWaveManager : MonoBehaviour
     void Update()
     {
         if (managerNumber == 1 && spawn)
+        {
+            StartCoroutine(waitForNextWave());
+            spawn = false;
+        }
+        if (spawn)
         {
             StartCoroutine(waitForNextWave());
             spawn = false;
@@ -279,17 +288,31 @@ public class EnemyWaveManager : MonoBehaviour
         if (!isLastManager)
         {
             yield return new WaitForSeconds(secsTillNextWorld);
-            nextWaveManager.SetActive(true);
-            nextWaveManager.tag = "Wave manager";
-            nextWaveManager.GetComponent<EnemyWaveManager>().oldMapLayout = mapLayout;
-            Debug.Log($"Next wave manager has been set up! By: {gameObject.name}");
-            Debug.Log($"Goodbye world! -{gameObject.name}");
-            Destroy(gameObject);
+
+            StartCoroutine(loadFinalLoadingScreen());
         }
     }
 
     private IEnumerator waitTillEnemiesDead()
     {
         yield return new WaitUntil(() => enemies.Count == 0);
+    }
+
+    private IEnumerator loadFinalLoadingScreen()
+    {
+        loadingScreen.SetActive(true);
+        float anim_length = loadingScreen.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(anim_length/2);
+        nextWaveManager.SetActive(true);
+        nextWaveManager.tag = "Wave manager";
+        nextWaveManager.GetComponent<EnemyWaveManager>().oldMapLayout = mapLayout;
+        Debug.Log($"Next wave manager has been set up! By: {gameObject.name}");
+        yield return new WaitForSeconds(anim_length/2);
+        loadingScreen.SetActive(false);
+        Debug.Log($"Deactivated the loading screen -{gameObject.name}");
+        nextWaveManager.GetComponent<EnemyWaveManager>().spawn = true;
+
+        Debug.Log($"Goodbye world! -{gameObject.name}");
+        Destroy(gameObject);
     }
 }
