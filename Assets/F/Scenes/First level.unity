@@ -1795,7 +1795,7 @@ MonoBehaviour:
   palmPrice: 15
   palmMultiplier: 2
   sakuraPrice: 20
-  sakuraMultiplier: 10
+  sakuraMultiplier: 2.3
   purchasedTreeType: 
   cost: 0
 --- !u!4 &432375963
@@ -1955,7 +1955,7 @@ MonoBehaviour:
     - enemyObject: {fileID: 3583849933003393996, guid: 39a09dab072e4594d914b16cc77dee9a, type: 3}
       count: 10
     - enemyObject: {fileID: 3366723591773873230, guid: ba2033d8cc7002a489aa8cd6c64d31a2, type: 3}
-      count: 20
+      count: 25
   - name: 2
     spawnInterval: 1
     spacingToNextWave: 5
@@ -7138,9 +7138,9 @@ MonoBehaviour:
     randomizeSpawnTime: 1
     randomRange: 2
     enemies:
-    - enemyObject: {fileID: 3366723591773873230, guid: ba2033d8cc7002a489aa8cd6c64d31a2, type: 3}
+    - enemyObject: {fileID: 4062739117764192884, guid: 5ffc3e6c26507a943871238e433e37ee, type: 3}
       count: 10
-    - enemyObject: {fileID: 3366723591773873230, guid: 358c1482bb8f21f408deeb6b91093bdc, type: 3}
+    - enemyObject: {fileID: 4062739117764192884, guid: 5f6bcb5c76c893546b5eacb1814eb358, type: 3}
       count: 30
   - name: 2
     spawnInterval: 1
@@ -7150,9 +7150,9 @@ MonoBehaviour:
     enemies:
     - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
       count: 10
-    - enemyObject: {fileID: 3583849933003393996, guid: 39a09dab072e4594d914b16cc77dee9a, type: 3}
+    - enemyObject: {fileID: 8376363195058540031, guid: f4cdae8921991a947b377c3e1d980e4f, type: 3}
       count: 10
-    - enemyObject: {fileID: 3366723591773873230, guid: ba2033d8cc7002a489aa8cd6c64d31a2, type: 3}
+    - enemyObject: {fileID: 4062739117764192884, guid: 5f6bcb5c76c893546b5eacb1814eb358, type: 3}
       count: 10
   mapLayout:
     towerPlaceables: []
@@ -8770,9 +8770,9 @@ MonoBehaviour:
   textComponent: {fileID: 2032123887}
   lines:
   - Hi again, looks like you made it through the update succesfully
-  - Oh wow, the shop is back!
-  - .. you've never seen it, did you?
-  - Well to explain simply - you can purchase new trees in the shop
+  - I just added the shop back!
+  - .. you haven't  seen it before, have you?
+  - Well to put it simply - you can purchase new trees in the shop
   - Just as I've said before - you can buy a new tree by placing in an empty spot,
     or upgrade an existing one by clicking on that tree instead.
   - Go ahead and buy one now-

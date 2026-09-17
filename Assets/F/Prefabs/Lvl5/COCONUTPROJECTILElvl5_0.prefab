@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1621810867820536296}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4194, y: -0.4321, z: 0}
-  m_LocalScale: {x: 2.0484953, y: 2.122496, z: 1}
+  m_LocalPosition: {x: 0.5634, y: -0.3196, z: 0}
+  m_LocalScale: {x: 2.4084158, y: 2.4145513, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   damage: 100
   doomsDay: 15
+  originTower: {fileID: 0}
 --- !u!50 &5802969689756471396
 Rigidbody2D:
   serializedVersion: 5

@@ -106,8 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77efeef5373d06d43875eeb97384321a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  damage: 50
+  damage: 60
   doomsDay: 7
+  originTower: {fileID: 0}
 --- !u!61 &8731933984381336447
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -109,7 +109,7 @@ MonoBehaviour:
   treeType: Pine
   level: 0
   shootSpeed: 20
-  shootRate: 0
+  shootRate: 1
   range: 4
   enemiesInRange: []
 --- !u!58 &-2560652256233971061
