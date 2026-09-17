@@ -210,7 +210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &137517657
 RectTransform:
   m_ObjectHideFlags: 0
@@ -963,7 +963,7 @@ MonoBehaviour:
     pot2Tree: {fileID: 776605652}
     pot3Tree: {fileID: 0}
   shopUpdate:
-    newBg: {fileID: 8273030664567297080, guid: d91adf8ed82f79545a85dc436fa91cc9, type: 3}
+    newBg: {fileID: 5617265608227386079, guid: 4a8b56d5a4997e14080208f249c1edb1, type: 3}
     newTrees: {fileID: 2294331670233252869, guid: d2324f69ec5ecc8468a510a9f9597dc0, type: 3}
     newUpgrade: {fileID: -2827987434102003184, guid: bab77c49882aa294aa40f036befcdc58, type: 3}
     newPot1: {fileID: 1768059660945561757, guid: c9e4a1abcf9e8fc49ae5e9d3a82fc778, type: 3}
@@ -4096,8 +4096,6 @@ MonoBehaviour:
     randomizeSpawnTime: 0
     randomRange: 1
     enemies:
-    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
-      count: 10
     - enemyObject: {fileID: 6974345604362570856, guid: 89d3d251c1e37ba49b453335ef05f1f5, type: 3}
       count: 10
     - enemyObject: {fileID: 8002904513659383379, guid: 3a124f9330c20354f940d28ea9a664b4, type: 3}
@@ -4473,7 +4471,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 991536169}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1034402296}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: ReturnToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &991536169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4760,6 +4770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1034402295}
   - component: {fileID: 1034402294}
+  - component: {fileID: 1034402296}
   m_Layer: 0
   m_Name: Map manager
   m_TagString: Map
@@ -4812,6 +4823,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1034402296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034402293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c35d00338818b48872b5947e6d6d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuManager
 --- !u!1 &1071301915
 GameObject:
   m_ObjectHideFlags: 0
@@ -5230,7 +5253,8 @@ MonoBehaviour:
   - How can I even pay you back for this..
   - Did you happen to enjoy the game?
   - You did?
-  - Well how about I let you enjoy it for as long as you want?
+  - Well how about I let you enjoy it for as long as you want? (maybe in another
+    actual update)
   - Deal!
   - '-'
   isTyping: 0
@@ -6512,7 +6536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7148,8 +7172,6 @@ MonoBehaviour:
     randomizeSpawnTime: 0
     randomRange: 1
     enemies:
-    - enemyObject: {fileID: 3290608549937627776, guid: 652711046fd317d408bd459cedefb9e1, type: 3}
-      count: 10
     - enemyObject: {fileID: 8376363195058540031, guid: f4cdae8921991a947b377c3e1d980e4f, type: 3}
       count: 10
     - enemyObject: {fileID: 4062739117764192884, guid: 5f6bcb5c76c893546b5eacb1814eb358, type: 3}

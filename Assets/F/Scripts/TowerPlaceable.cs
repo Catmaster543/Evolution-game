@@ -104,7 +104,7 @@ public class TowerPlaceable : MonoBehaviour
         if (diasConnected)
         {
             tutsDialogue.buying = false;
-            tutsDialogue.i = tutsDialogue.i + 1;
+            tutsDialogue.i = 7;
         }
         if (shop.purchasedTreeType == "Pine")
         {
