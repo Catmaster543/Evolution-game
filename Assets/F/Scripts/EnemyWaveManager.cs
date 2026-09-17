@@ -134,6 +134,7 @@ public class EnemyWaveManager : MonoBehaviour
 
         if (managerNumber == 2)
         {
+            spawn = false;
             diaBox2.SetActive(true);
 
             slot1.SetActive(true);
@@ -234,8 +235,9 @@ public class EnemyWaveManager : MonoBehaviour
             currencyText.color = new Color(113, 65, 71);
         }
 
-        if (managerNumber != 1 && spawn)
+        if (managerNumber != 1 && managerNumber != 2 && spawn)
         {
+            Debug.Log($"I ({gameObject.name}) am not number 1, or 2, I'm actually {managerNumber}. Spawning enemies.");
             StartCoroutine(waitForNextWave());
         }
     }
@@ -243,11 +245,19 @@ public class EnemyWaveManager : MonoBehaviour
     {
         if (managerNumber == 1 && spawn)
         {
+            Debug.Log("Manager number is 1 and spawn is on, starting enemies spawn");
+            StartCoroutine(waitForNextWave());
+            spawn = false;
+        }
+        if (managerNumber == 2 && spawn)
+        {
+            Debug.Log("Manager number is 2 and spawn is on, starting enemies spawn");
             StartCoroutine(waitForNextWave());
             spawn = false;
         }
         if (spawn)
         {
+            Debug.Log($"Manager number is not generic, {managerNumber}, spawn is triggered, starting enemies spawn");
             StartCoroutine(waitForNextWave());
             spawn = false;
         }
@@ -317,7 +327,10 @@ public class EnemyWaveManager : MonoBehaviour
         yield return new WaitForSeconds(anim_length/2);
         loadingScreen.SetActive(false);
         Debug.Log($"Deactivated the loading screen -{gameObject.name}");
-        nextWaveManager.GetComponent<EnemyWaveManager>().spawn = true;
+        if (nextWaveManager.GetComponent<EnemyWaveManager>().managerNumber != 2)
+        {
+            nextWaveManager.GetComponent<EnemyWaveManager>().spawn = true;
+        }
 
         Debug.Log($"Goodbye world! -{gameObject.name}");
         Destroy(gameObject);

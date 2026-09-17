@@ -15,6 +15,7 @@ public class TutsDialogue : MonoBehaviour
 
     bool gone = false;
 
+    EnemyWaveManager enemyWaveManager;
     void Start()
     {
         textComponent.text = string.Empty;
@@ -32,6 +33,8 @@ public class TutsDialogue : MonoBehaviour
         {
             if (i == 10)
             {
+                enemyWaveManager = GameObject.FindGameObjectWithTag("Wave manager").GetComponent<EnemyWaveManager>();
+                enemyWaveManager.spawn = true;
                 gameObject.SetActive(false);
             }
             if (i == 6 && !buying)
