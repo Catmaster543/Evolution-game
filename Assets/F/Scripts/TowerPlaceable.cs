@@ -14,8 +14,10 @@ public class TowerPlaceable : MonoBehaviour
     private Balance balance;
 
     bool diaConnected;
+    bool diasConnected;
 
     public TutDialogue tutDialogue;
+    public TutsDialogue tutsDialogue;
     void Start()
     {
         shop = GameObject.FindGameObjectWithTag("Shopkeeper").GetComponent<Shop>();
@@ -31,10 +33,29 @@ public class TowerPlaceable : MonoBehaviour
         {
             diaConnected = false;
         }
+
+        if (GameObject.FindGameObjectWithTag("Dias") != null)
+        {
+            tutsDialogue = GameObject.FindGameObjectWithTag("Dias").GetComponent<TutsDialogue>();
+            diasConnected = true;
+        }
+        else
+        {
+            diasConnected = false;
+        }
     }
 
     public void Clicked()
     {
+        if (GameObject.FindGameObjectWithTag("Dias") != null)
+        {
+            tutsDialogue = GameObject.FindGameObjectWithTag("Dias").GetComponent<TutsDialogue>();
+            diasConnected = true;
+        }
+        else
+        {
+            diasConnected = false;
+        }
         Debug.Log($"I ({gameObject.name}) have been clicked");
         if (tower != null)
         {
@@ -79,6 +100,11 @@ public class TowerPlaceable : MonoBehaviour
         {
             tutDialogue.placing = false;
             tutDialogue.i = tutDialogue.i + 1;
+        }
+        if (diasConnected)
+        {
+            tutsDialogue.buying = false;
+            tutsDialogue.i = tutsDialogue.i + 1;
         }
         if (shop.purchasedTreeType == "Pine")
         {

@@ -11,9 +11,12 @@ public class Dialogue : MonoBehaviour
     private float textSpeed = 0.05f;
     private int index;
     public bool isTyping;
+    public bool show = false;
+    bool show2 = false;
 
     public GameObject splaScreen;
     public GameObject menu;
+    public GameObject diaBox;
 
     void Start()
     {
@@ -22,20 +25,36 @@ public class Dialogue : MonoBehaviour
     }
     void Update()
     {
-        if (i == 9)
-        {
-            splaScreen.SetActive(false);
-            menu.SetActive(true);
-        }
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (diaBox.activeSelf && show)
         {
             NextLine();
+            show = false;
+        }
+        else if (diaBox.activeSelf && !show2)
+        {
+            show = true;
+            show2 = true;
+        } 
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            if (diaBox.activeSelf)
+            {
+                if (i == 9)
+                {
+                    splaScreen.SetActive(false);
+                    menu.SetActive(true);
+                }
+                else
+                {
+                    NextLine();
+                }
+            }
         }
     }
     void StartDialogue()
     {
         index = 0;
-        StartCoroutine(TypeLine());
+        //StartCoroutine(TypeLine());
     }
 
     System.Collections.IEnumerator TypeLine()

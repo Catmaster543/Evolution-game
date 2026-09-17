@@ -15,6 +15,8 @@ public class Map : MonoBehaviour
 
     public bool placed = false;
 
+    public bool tutorialBuying = false;
+
     private Shop shop;
     private Map map;
 

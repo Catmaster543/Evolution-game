@@ -101,7 +101,7 @@ public class EnemyWaveManager : MonoBehaviour
     public MapLayout oldMapLayout;
 
     public GameObject diaBox;
-    //public GameObject diaBox2;
+    public GameObject diaBox2;
 
     public GameObject loadingScreen;
 
@@ -114,6 +114,8 @@ public class EnemyWaveManager : MonoBehaviour
 
     public List<GameObject> enemies = new();
 
+    public GameObject endGroup;
+
     Map map;
 
     private float timeLeft;
@@ -122,6 +124,7 @@ public class EnemyWaveManager : MonoBehaviour
     {
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
         loadingScreen = GameObject.FindGameObjectWithTag("Loading");
+        //endManager = GameObject.FindGameObjectWithTag("End manager");
 
         if (managerNumber == 1)
         {
@@ -131,7 +134,7 @@ public class EnemyWaveManager : MonoBehaviour
 
         if (managerNumber == 2)
         {
-            //diaBox2.SetActive(true);
+            diaBox2.SetActive(true);
 
             slot1.SetActive(true);
             map.spots.Add(slot1.GetComponent<TowerPlaceable>());
@@ -290,6 +293,10 @@ public class EnemyWaveManager : MonoBehaviour
             yield return new WaitForSeconds(secsTillNextWorld);
 
             StartCoroutine(loadFinalLoadingScreen());
+        }
+        else
+        {
+            endGroup.SetActive(true);
         }
     }
 

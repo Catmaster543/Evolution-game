@@ -1,19 +1,21 @@
-using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine;
 
-
-public class TutDialogue : MonoBehaviour
-{   
+public class EndDialog : MonoBehaviour
+{
     public int i = 0;
     public TextMeshProUGUI textComponent;
     public string[] lines;
     private float textSpeed = 0.05f;
     private int index;
     public bool isTyping;
+    
+    public GameObject endChoices;
+    public GameObject endFadeScreen;
 
     private EnemyWaveManager enemyWaveManager;
-
     private Shop shop;
     private Map map;
 
@@ -30,27 +32,16 @@ public class TutDialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            if (i == 5 && !placing)
+            if (i == 8)
             {
-                Debug.Log("Tutorial placing has started");
-                shop.purchasedTreeType = "Pine";
-                shop.purchasedTower = shop.pineTree;
-                StartCoroutine(map.PlaceATree());
-                placing = true;
-            }
-            else if (i == 5 && placing)
-            {
-
-            }
-            else if (i == 12)
-            {
-                enemyWaveManager.spawn = true;
-                gameObject.SetActive(false);
+                StartCoroutine(playEndAnimations());
+                //gameObject.SetActive(false);
             }
             else
             {
                 NextLine();
             }
+
         }
     }
     void StartDialogue()
@@ -94,5 +85,24 @@ public class TutDialogue : MonoBehaviour
                 textComponent.text = string.Empty;
             }
         }
+    }
+
+    //---
+
+    public IEnumerator playEndAnimations()
+    {
+        gameObject.GetComponent<Animator>().SetTrigger("Fade-out");
+        float animLength3 = gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(animLength3);
+
+        endFadeScreen.SetActive(true);
+        float animLength = endFadeScreen.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(animLength);
+
+        endChoices.SetActive(true);
+        float animLength2 = endChoices.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(animLength2);
+
+        gameObject.SetActive(false);
     }
 }
