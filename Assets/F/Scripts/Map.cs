@@ -16,12 +16,14 @@ public class Map : MonoBehaviour
     public bool placed = false;
 
     private Shop shop;
+    private Map map;
 
     public TowerPlaceable lastPlacedSpot;
 
     void Start()
     {
         shop = GameObject.FindGameObjectWithTag("Shopkeeper").GetComponent<Shop>();
+        map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
         StartCoroutine(CheckPlaceableSpots());
         DeActivateAllSpots();
     }
@@ -44,9 +46,32 @@ public class Map : MonoBehaviour
             }
             else if (spot.tower.GetComponent<Tower>().treeType == shop.purchasedTreeType)
             {
-                Debug.Log($"Spot {spot.name} is empty, turning it on");
-                spot.gameObject.SetActive(true);
-                spot.tower.GetComponent<SpriteRenderer>().color = Color.yellow;
+                if (spot.tower.GetComponent<Tower>().treeType == "Pine")
+                {
+                    if (spot.tower.GetComponent<Tower>().level < map.pineTowers.Length-1)
+                    {
+                        Debug.Log($"Spot {spot.name} has a pine tree at level {spot.tower.GetComponent<Tower>().level}, which is smaller then {map.pineTowers.Length}");
+                        spot.gameObject.SetActive(true);
+                        spot.tower.GetComponent<SpriteRenderer>().color = Color.yellow;
+                    }
+                }
+                else if (spot.tower.GetComponent<Tower>().treeType == "Palm")
+                {
+                    if (spot.tower.GetComponent<Tower>().level < map.palmTowers.Length-1)
+                    {
+                        spot.gameObject.SetActive(true);
+                        spot.tower.GetComponent<SpriteRenderer>().color = Color.yellow;
+                    }
+                }
+                else if (spot.tower.GetComponent<Tower>().treeType == "Sakura")
+                {
+                    if (spot.tower.GetComponent<Tower>().level < map.sakuraTowers.Length-1)
+                    {
+                        spot.gameObject.SetActive(true);
+                        spot.tower.GetComponent<SpriteRenderer>().color = Color.yellow;
+                    }
+                }
+                Debug.Log($"Spot {spot.name} is used, turning it on");
             }
         }
         Debug.Log("Turned on all spots, waiting for placement");

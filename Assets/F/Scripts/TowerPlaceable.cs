@@ -45,6 +45,7 @@ public class TowerPlaceable : MonoBehaviour
                 {
                     Destroy(tower);
                     tower = Instantiate(map.pineTowers[level+1], transform.position, quaternion.identity);
+                    Debug.Log($"Place a {map.pineTowers[level + 1]}");
                     tower.GetComponent<Tower>().level = level + 1;
                     tower.GetComponent<Tower>().treeType = "Pine";
                 }
@@ -52,6 +53,7 @@ public class TowerPlaceable : MonoBehaviour
                 {
                     Destroy(tower);
                     tower = Instantiate(map.palmTowers[level+1], transform.position, quaternion.identity);
+                    Debug.Log($"Place a {map.pineTowers[level + 1]}");
                     tower.GetComponent<Tower>().level = level + 1;
                     tower.GetComponent<Tower>().treeType = "Palm";
                 }
@@ -59,6 +61,7 @@ public class TowerPlaceable : MonoBehaviour
                 {
                     Destroy(tower);
                     tower = Instantiate(map.sakuraTowers[level + 1], transform.position, quaternion.identity);
+                    Debug.Log($"Place a {map.pineTowers[level + 1]}");
                     tower.GetComponent<Tower>().level = level + 1;
                     tower.GetComponent<Tower>().treeType = "Sakura";
                 }
