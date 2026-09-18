@@ -1083,7 +1083,7 @@ VideoPlayer:
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: file://C:/Users/admin/Desktop/Start/Projects/Evolution game/Assets/A/Untitled_Artwork.mp4
+  m_Url: file://C:/Users/admin/Desktop/Start/Projects/Evolution game/Assets/StreamingAssets/Untitled_Artwork.mp4
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
@@ -3090,7 +3090,7 @@ VideoPlayer:
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: file://C:/Users/admin/Desktop/Start/Projects/Evolution game/Assets/A/LOADINGMP4.mp4
+  m_Url: file://C:/Users/admin/Desktop/Start/Projects/Evolution game/Assets/StreamingAssets/LOADINGMP4.mp4
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0

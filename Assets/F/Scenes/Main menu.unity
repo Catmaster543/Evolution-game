@@ -1281,7 +1281,7 @@ VideoPlayer:
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: file://C:/Users/admin/Desktop/Start/Projects/Evolution game/Assets/A/Intro/ERROR
+  m_Url: file://C:/Users/admin/Desktop/Start/Projects/Evolution game/Assets/StreamingAssets/ERROR
     SCREEN.mp4
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
@@ -1827,7 +1827,7 @@ VideoPlayer:
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: file://C:/Users/admin/Desktop/Start/Projects/Evolution game/Assets/A/Intro/TRUENOAI.mp4
+  m_Url: file://C:/Users/admin/Desktop/Start/Projects/Evolution game/Assets/StreamingAssets/TRUENOAI.mp4
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
