@@ -25,12 +25,15 @@ public class Enemy : MonoBehaviour
     public int order;
 
     private Bullet lastBullet;
+
+    private Map map;
     
     void Start()
     {
         splineContainer = GameObject.FindGameObjectWithTag("Spline").GetComponent<SplineContainer>();
         waveManager = GameObject.FindGameObjectWithTag("Wave manager").GetComponent<EnemyWaveManager>();
         balance = GameObject.FindGameObjectWithTag("Balance").GetComponent<Balance>();
+        map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
 
         spline = gameObject.GetComponent<SplineAnimate>();
 
@@ -61,6 +64,7 @@ public class Enemy : MonoBehaviour
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
             lastBullet = bullet;
             hp -= bullet.damage;
+            map.theSoundOfDoom.Play();
             Destroy(bullet.gameObject);
         }
         else if (collision.gameObject.tag == "End")

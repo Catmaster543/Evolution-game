@@ -40,19 +40,17 @@ public class Shop : MonoBehaviour
 
     private Map map;
     private Balance balance;
+
+    public AudioSource clicksfx;
     void Start()
     {
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
         balance = GameObject.FindGameObjectWithTag("Balance").GetComponent<Balance>();
+        clicksfx = gameObject.GetComponent<AudioSource>();
 
         pineCostText.text = pinePrice.ToString();
         palmCostText.text = palmPrice.ToString();
         sakuraCostText.text = sakuraPrice.ToString();
-    }
-
-    void Update()
-    {
-        
     }
 
     public void OpenTab()
@@ -62,6 +60,7 @@ public class Shop : MonoBehaviour
 
     public void BuyAPineTree()
     {
+        clicksfx.Play();
         if (balance.balance >= pinePrice)
         {
             purchasedTower = pineTree;
@@ -74,6 +73,7 @@ public class Shop : MonoBehaviour
 
     public void BuyAPalmTree()
     {
+        clicksfx.Play();
         Debug.Log("Trying to buy a palm");
         if (balance.balance >= palmPrice)
         {
@@ -87,6 +87,7 @@ public class Shop : MonoBehaviour
 
     public void BuyASakuraTree()
     {
+        clicksfx.Play();
         Debug.Log("Trying to buy a sakura");
         if (balance.balance >= sakuraPrice)
         {

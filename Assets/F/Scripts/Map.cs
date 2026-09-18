@@ -12,6 +12,7 @@ public class Map : MonoBehaviour
     [SerializeField] public GameObject[] pineTowers;
     [SerializeField] public GameObject[] palmTowers;
     [SerializeField] public GameObject[] sakuraTowers;
+    [SerializeField] public AudioSource theSoundOfDoom;
 
     public bool placed = false;
 
@@ -26,6 +27,7 @@ public class Map : MonoBehaviour
     {
         shop = GameObject.FindGameObjectWithTag("Shopkeeper").GetComponent<Shop>();
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
+        theSoundOfDoom = gameObject.GetComponent<AudioSource>();
         StartCoroutine(CheckPlaceableSpots());
         DeActivateAllSpots();
     }

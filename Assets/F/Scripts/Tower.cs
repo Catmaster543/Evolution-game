@@ -13,6 +13,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private float shootSpeed;
     [SerializeField] private float shootRate;
     [SerializeField] private float range;
+    [SerializeField] public AudioSource shootSound;
 
     private float clocker;
     private EnemyWaveManager enemyWaveManager;
@@ -25,6 +26,7 @@ public class Tower : MonoBehaviour
     {
         enemyWaveManager = GameObject.FindGameObjectWithTag("Wave manager").GetComponent<EnemyWaveManager>();
         rangeCollider = gameObject.GetComponent<CircleCollider2D>();
+        shootSound = gameObject.GetComponent<AudioSource>();
 
         rangeCollider.radius = range;
 
@@ -62,13 +64,14 @@ public class Tower : MonoBehaviour
             Vector3 dest = target.transform.position;
             dest.z = 0;
 
-
             float angle = Mathf.Atan2(target.transform.position.x, target.transform.position.y) * Mathf.Rad2Deg;
 
 
             Vector3 direction = (dest - gameObject.transform.position).normalized;
 
             GameObject proj = Instantiate(bullet, gameObject.transform.position, Quaternion.Euler(0, 0, angle));
+
+            shootSound.Play();
 
             Bullet bbullet = proj.GetComponent<Bullet>();
             bbullet.originTower = this;

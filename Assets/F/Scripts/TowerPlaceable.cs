@@ -18,6 +18,8 @@ public class TowerPlaceable : MonoBehaviour
 
     public TutDialogue tutDialogue;
     public TutsDialogue tutsDialogue;
+
+    public AudioSource placedsfx;
     void Start()
     {
         shop = GameObject.FindGameObjectWithTag("Shopkeeper").GetComponent<Shop>();
@@ -122,6 +124,7 @@ public class TowerPlaceable : MonoBehaviour
             shop.sakuraCostText.text = shop.sakuraPrice.ToString();
         }
         taken = true;
+        tower.GetComponent<Tower>().shootSound.Play();
         map.lastPlacedSpot = this;
         map.placed = true;
     }
