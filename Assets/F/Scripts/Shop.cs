@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -69,6 +70,10 @@ public class Shop : MonoBehaviour
             Debug.Log("Purchased pine tree set, moving on to placing it");
             StartCoroutine(map.PlaceATree());
         }
+        else
+        {
+            StartCoroutine(notEnoughBalance());
+        }
     }
 
     public void BuyAPalmTree()
@@ -82,6 +87,10 @@ public class Shop : MonoBehaviour
             cost = palmPrice;
             Debug.Log("Purchased palm tree set, moving on to placing it");
             StartCoroutine(map.PlaceATree());
+        }
+        else
+        {
+            StartCoroutine(notEnoughBalance());
         }
     }
 
@@ -98,5 +107,16 @@ public class Shop : MonoBehaviour
             StartCoroutine(map.PlaceATree());
             sakuraCostText.text = sakuraPrice.ToString();
         }
+        else
+        {
+            StartCoroutine(notEnoughBalance());
+        }
+    }
+
+    public IEnumerator notEnoughBalance()
+    {
+        balance.balanceText.color = Color.red;
+        yield return new WaitForSeconds(0.3f);
+        balance.balanceText.color = Color.white;
     }
 }
