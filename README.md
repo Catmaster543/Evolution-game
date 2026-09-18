@@ -4,6 +4,7 @@ Something went wrong while exporting the game, the files got corrupted... Now yo
 
 ## How can I play this?
 Well I've tried my best to make a working web version to make the game as easy to play as possible, but videos just straight up refuses to work in the web.
+Anyways you can play, or preferably download [here](https://cat-master543.itch.io/boom-protector)
 
 # Content
 The game features:
