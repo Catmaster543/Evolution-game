@@ -3,8 +3,8 @@ A **tower defense game** with quite a twist to it - **the game literaly evolves 
 Something went wrong while exporting the game, the files got corrupted... Now you have to help "Null" defend the unaffected files from the corrupted ones while they rework the game
 
 ## How can I play this?
-Well I've tried my best to make a working web version to make the game as easy to play as possible, but videos just straight up refuses to work in the web.
-Anyways you can play, or preferably download [here](https://cat-master543.itch.io/boom-protector)
+You can play the web version of this game, or download it (which I highly reccomend) [here](https://cat-master543.itch.io/boom-protector).
+It took me some serious effort to make the web version, due to many complications. By serious effort I mean nearly 4 hours. Horrible experience..
 
 # Content
 The game features:
@@ -43,4 +43,3 @@ And.. that's it.
 ## Technicalities
 Made using Unity, should run on even low-end devices.
 **Only windows and web versions exist** to this day.
-Note that the web version lacks all cutscenes, this is due to my inability to figure out a way to play videos in the web builds. Sorry yall, I spent almost 2h30m trying to get it to work, but failed.
