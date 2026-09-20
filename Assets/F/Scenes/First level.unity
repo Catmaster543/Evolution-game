@@ -1033,6 +1033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 289674071}
   - component: {fileID: 289674072}
+  - component: {fileID: 289674073}
   m_Layer: 5
   m_Name: Video player
   m_TagString: Untagged
@@ -1077,7 +1078,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
@@ -1093,6 +1094,19 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &289674073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289674070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3176de48899445048be5e00f06f309c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayCutscene
+  fileName: end_screen.mp4
 --- !u!1 &292683788
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,6 +3073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 559224309}
   - component: {fileID: 559224308}
+  - component: {fileID: 559224310}
   m_Layer: 5
   m_Name: Video player
   m_TagString: Untagged
@@ -3084,7 +3099,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
@@ -3119,6 +3134,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &559224310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559224307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3176de48899445048be5e00f06f309c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayCutscene
+  fileName: loading.mp4
 --- !u!1 &566807889
 GameObject:
   m_ObjectHideFlags: 0

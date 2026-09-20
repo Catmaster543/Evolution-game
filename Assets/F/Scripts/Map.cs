@@ -23,6 +23,8 @@ public class Map : MonoBehaviour
 
     public TowerPlaceable lastPlacedSpot;
 
+    public int worldNumber = 0;
+
     void Start()
     {
         shop = GameObject.FindGameObjectWithTag("Shopkeeper").GetComponent<Shop>();
