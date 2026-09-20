@@ -117,6 +117,13 @@ public class Shop : MonoBehaviour
     {
         balance.balanceText.color = Color.red;
         yield return new WaitForSeconds(0.3f);
-        balance.balanceText.color = Color.white;
+        if (map.worldNumber <= 2)
+        {
+            balance.balanceText.color = Color.black;
+        }
+        else
+        {
+            balance.balanceText.color = Color.white;
+        }   
     }
 }

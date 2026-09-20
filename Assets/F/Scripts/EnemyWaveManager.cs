@@ -126,6 +126,8 @@ public class EnemyWaveManager : MonoBehaviour
         loadingScreen = GameObject.FindGameObjectWithTag("Loading");
         //endManager = GameObject.FindGameObjectWithTag("End manager");
 
+        map.worldNumber++;
+
         if (managerNumber == 1)
         {
             diaBox.SetActive(true);
