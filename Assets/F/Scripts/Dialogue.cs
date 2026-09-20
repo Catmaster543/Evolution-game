@@ -7,6 +7,8 @@ public class Dialogue : MonoBehaviour
 {   
     int i = 0;
     public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI guideTextComponent;
+    public string guideText;
     public string[] lines;
     private float textSpeed = 0.05f;
     private int index;
@@ -21,6 +23,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
+        guideTextComponent.text = string.Empty;
         StartDialogue();
     }
     void Update()
@@ -69,18 +72,25 @@ public class Dialogue : MonoBehaviour
         }
         i++;
         isTyping = false;
+
+        StartCoroutine(TypeGuideLine());
     }
     public void NextLine()
     {
+        guideTextComponent.text = string.Empty;
+
         if (isTyping)
         {
             textComponent.text = lines[index];
             isTyping = false;
             StopAllCoroutines();
+            StartCoroutine(TypeGuideLine());
             i++;
         }
         else
         {
+            StopCoroutine(TypeGuideLine());
+            guideTextComponent.text = string.Empty;
             if (index < lines.Length - 1)
             {
                 index++;
@@ -91,6 +101,18 @@ public class Dialogue : MonoBehaviour
             {
                 textComponent.text = string.Empty;
             }
+        }
+    }
+
+    System.Collections.IEnumerator TypeGuideLine()
+    {
+        guideTextComponent.text = string.Empty;
+        yield return new WaitForSeconds(2);
+
+        foreach (char c in guideText.ToCharArray())
+        {
+            guideTextComponent.text += c;
+            yield return new WaitForSeconds(textSpeed);
         }
     }
 }
