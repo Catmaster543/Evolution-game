@@ -113,6 +113,11 @@ MonoBehaviour:
   shootRate: 1
   range: 4
   shootSound: {fileID: 5316679432695278763}
+  accuracy: 0
+  damage: 12
+  upgrade1: {fileID: 0}
+  upgrade2: {fileID: 0}
+  upgrade3: {fileID: 0}
   enemiesInRange: []
 --- !u!58 &-2560652256233971061
 CircleCollider2D:

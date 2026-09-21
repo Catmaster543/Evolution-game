@@ -109,10 +109,15 @@ MonoBehaviour:
   bullet: {fileID: 2880866996790891528, guid: d8fbd62eebf18624ebc94bd6550663f2, type: 3}
   treeType: Sakura
   level: 0
-  shootSpeed: 15
-  shootRate: 0.5
-  range: 6
+  shootSpeed: 6
+  shootRate: 0.4
+  range: 10
   shootSound: {fileID: -2733022994668881042}
+  accuracy: 7
+  damage: 0
+  upgrade1: {fileID: 0}
+  upgrade2: {fileID: 0}
+  upgrade3: {fileID: 0}
   enemiesInRange: []
 --- !u!58 &5687527597149814891
 CircleCollider2D:

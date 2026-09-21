@@ -180,9 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7bd73d3013ee1418971cdc6ae9a145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  hp: 60
-  maxHp: 10
-  speed: 0.5
+  hp: 40
+  maxHp: 40
+  speed: 0.7
   damage: 10
   value: 3
   order: 0

@@ -35,6 +35,9 @@ public class Shop : MonoBehaviour
     public float sakuraPrice;
     public float sakuraMultiplier;
 
+    public GameObject towersTab;
+    public GameObject upgradesTab;
+
     public string purchasedTreeType;
 
     public float cost;
@@ -54,9 +57,16 @@ public class Shop : MonoBehaviour
         sakuraCostText.text = sakuraPrice.ToString();
     }
 
-    public void OpenTab()
+    public void OpenUpgradesTab()
     {
-        
+        upgradesTab.SetActive(true);
+        towersTab.SetActive(false);
+    }
+
+    public void OpenTowersTab()
+    {
+        towersTab.SetActive(true);
+        upgradesTab.SetActive(false);
     }
 
     public void BuyAPineTree()
