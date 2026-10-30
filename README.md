@@ -29,7 +29,10 @@ The game features:
 - **End screen**
 - **Intro cutscene**
 - **Final cutscene**
+- **Codebase for upgrades** - only a code-base, not a usable feature yet!
 - **Soft sound design**
+- **Custom hand-made font**
+- **Guide text for the dialogue box**
 - **All hand drawn**
 - **Absolutely no AI usage** (literaly)
 
