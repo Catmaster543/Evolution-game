@@ -17,9 +17,9 @@ public class Tower : MonoBehaviour
     [SerializeField] float accuracy;
     [SerializeField] float damage;
 
-    [SerializeField] private Upgrade upgrade1;
-    [SerializeField] private Upgrade upgrade2;
-    [SerializeField] private Upgrade upgrade3;
+    public Upgrade upgrade1;
+    public Upgrade upgrade2;
+    //[SerializeField] private Upgrade upgrade3;
 
     private float clocker;
 
@@ -117,6 +117,7 @@ public class Tower : MonoBehaviour
                     realShootRate += shootRate * upgrade2.shootRateMult;
                 }
             }
+            /*
             if (upgrade3 != null)
             {
                 if (upgrade3.accuracyMult != 0)
@@ -136,6 +137,7 @@ public class Tower : MonoBehaviour
                     realShootRate += shootRate * upgrade3.shootRateMult;
                 }
             }
+            */
 
             Vector3 dest = target.transform.position;
             dest.z = 0;

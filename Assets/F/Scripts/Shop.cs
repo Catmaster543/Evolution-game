@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 [System.Serializable]
 public class PurchaseableTree
@@ -35,6 +37,10 @@ public class Shop : MonoBehaviour
     public float sakuraPrice;
     public float sakuraMultiplier;
 
+    public List<GameObject> upgrades = new();
+    public GameObject upgradeButton;
+    public GameObject upgradeScrollBar;
+
     public GameObject towersTab;
     public GameObject upgradesTab;
 
@@ -46,6 +52,15 @@ public class Shop : MonoBehaviour
     private Balance balance;
 
     public AudioSource clicksfx;
+    public PurchaseType purchasedType;
+    public Upgrade purchasedUpgrade;
+
+    public enum PurchaseType
+    {
+        NewTower,
+        Upgrade
+    }
+
     void Start()
     {
         map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
@@ -67,10 +82,22 @@ public class Shop : MonoBehaviour
     {
         towersTab.SetActive(true);
         upgradesTab.SetActive(false);
+
+        foreach (Transform child in upgradeScrollBar.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+
+        foreach (GameObject go in upgrades)
+        {
+            Button button = Instantiate(upgradeButton, upgradeScrollBar.transform).GetComponent<Button>();
+            button.onClick.AddListener(() => { PurchaseUpgrade(); });
+        }
     }
 
     public void BuyAPineTree()
     {
+        purchasedType = PurchaseType.NewTower;
         clicksfx.Play();
         if (balance.balance >= pinePrice)
         {
@@ -88,6 +115,7 @@ public class Shop : MonoBehaviour
 
     public void BuyAPalmTree()
     {
+        purchasedType = PurchaseType.NewTower;
         clicksfx.Play();
         Debug.Log("Trying to buy a palm");
         if (balance.balance >= palmPrice)
@@ -106,6 +134,7 @@ public class Shop : MonoBehaviour
 
     public void BuyASakuraTree()
     {
+        purchasedType = PurchaseType.NewTower;
         clicksfx.Play();
         Debug.Log("Trying to buy a sakura");
         if (balance.balance >= sakuraPrice)
@@ -121,6 +150,15 @@ public class Shop : MonoBehaviour
         {
             StartCoroutine(notEnoughBalance());
         }
+    }
+
+    public void PurchaseUpgrade()
+    {
+        purchasedType = PurchaseType.Upgrade;
+        purchasedUpgrade = gameObject.GetComponent<Upgrade>();
+        clicksfx.Play();
+        Debug.Log("Purchasing an upgrade");
+        StartCoroutine(map.PlaceATree(true));
     }
 
     public IEnumerator notEnoughBalance()

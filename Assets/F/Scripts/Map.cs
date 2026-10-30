@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,50 +35,80 @@ public class Map : MonoBehaviour
         DeActivateAllSpots();
     }
 
-    public IEnumerator PlaceATree()
+    public IEnumerator PlaceATree(bool upgradePlace = false)
     {
         Debug.Log("Placing a tree");
         Debug.Log("Turning on all last spots");
         ActivateAllSpots();
-        Debug.Log("Checking tree placement");
+        Debug.Log("Checking tree/upgrade placement");
         yield return CheckPlaceableSpots();
         DeActivateAllSpots();
-        Debug.Log($"Checked all spots, result: {spots}, count: {spots.Count}");
-        foreach (TowerPlaceable spot in spots)
+        Debug.Log($"Checked all spots, result: {spots}, count: {spots.Count}. Now splitting down based on place/upgrade mode.");
+        if (!upgradePlace)
         {
-            if (!spot.taken)
+            foreach (TowerPlaceable spot in spots)
             {
-                Debug.Log($"Spot {spot.name} is empty, turning it on!");
-                spot.gameObject.SetActive(true);
+                if (!spot.taken)
+                {
+                    Debug.Log($"Spot {spot.name} is empty, turning it on!");
+                    spot.gameObject.SetActive(true);
+                }
+                else if (spot.tower.GetComponent<Tower>().treeType == shop.purchasedTreeType)
+                {
+                    if (spot.tower.GetComponent<Tower>().treeType == "Pine")
+                    {
+                        if (spot.tower.GetComponent<Tower>().level < map.pineTowers.Length - 1)
+                        {
+                            Debug.Log($"Spot {spot.name} has a pine tree at level {spot.tower.GetComponent<Tower>().level}, which is smaller then {map.pineTowers.Length}");
+                            spot.gameObject.SetActive(true);
+                            spot.tower.GetComponent<SpriteRenderer>().color = Color.yellow;
+                        }
+                    }
+                    else if (spot.tower.GetComponent<Tower>().treeType == "Palm")
+                    {
+                        if (spot.tower.GetComponent<Tower>().level < map.palmTowers.Length - 1)
+                        {
+                            spot.gameObject.SetActive(true);
+                            spot.tower.GetComponent<SpriteRenderer>().color = Color.yellow;
+                        }
+                    }
+                    else if (spot.tower.GetComponent<Tower>().treeType == "Sakura")
+                    {
+                        if (spot.tower.GetComponent<Tower>().level < map.sakuraTowers.Length - 1)
+                        {
+                            spot.gameObject.SetActive(true);
+                            spot.tower.GetComponent<SpriteRenderer>().color = Color.yellow;
+                        }
+                    }
+                    Debug.Log($"Spot {spot.name} is used, turning it on");
+                }
             }
-            else if (spot.tower.GetComponent<Tower>().treeType == shop.purchasedTreeType)
+        }
+        else
+        {
+            foreach (TowerPlaceable spot in spots)
             {
-                if (spot.tower.GetComponent<Tower>().treeType == "Pine")
+                if (spot.taken)
                 {
-                    if (spot.tower.GetComponent<Tower>().level < map.pineTowers.Length-1)
-                    {
-                        Debug.Log($"Spot {spot.name} has a pine tree at level {spot.tower.GetComponent<Tower>().level}, which is smaller then {map.pineTowers.Length}");
-                        spot.gameObject.SetActive(true);
-                        spot.tower.GetComponent<SpriteRenderer>().color = Color.yellow;
-                    }
-                }
-                else if (spot.tower.GetComponent<Tower>().treeType == "Palm")
-                {
-                    if (spot.tower.GetComponent<Tower>().level < map.palmTowers.Length-1)
+                    if (spot.tower.GetComponent<Tower>().upgrade1 != null)
                     {
                         spot.gameObject.SetActive(true);
                         spot.tower.GetComponent<SpriteRenderer>().color = Color.yellow;
+                        /*
+                        spot.tower.GetComponent<Tower>().upgrade1 = shop.purchasedUpgrade;
+                        shop.purchasedUpgrade = null;
+                        */
                     }
-                }
-                else if (spot.tower.GetComponent<Tower>().treeType == "Sakura")
-                {
-                    if (spot.tower.GetComponent<Tower>().level < map.sakuraTowers.Length-1)
+                    else if (spot.tower.GetComponent<Tower>().upgrade2 != null)
                     {
                         spot.gameObject.SetActive(true);
                         spot.tower.GetComponent<SpriteRenderer>().color = Color.yellow;
+                        /*
+                        spot.tower.GetComponent<Tower>().upgrade2 = shop.purchasedUpgrade;
+                        shop.purchasedUpgrade = null;
+                        */
                     }
                 }
-                Debug.Log($"Spot {spot.name} is used, turning it on");
             }
         }
         Debug.Log("Turned on all spots, waiting for placement");

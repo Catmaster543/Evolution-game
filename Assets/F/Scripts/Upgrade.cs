@@ -6,4 +6,12 @@ public class Upgrade : MonoBehaviour
     public float rangeMult;
     public float shootRateMult;
     public float accuracyMult;
+
+    public enum upgradeType
+    {
+        Damage,
+        Range,
+        Rate,
+        Accuracy
+    }
 }
